@@ -1,0 +1,101 @@
+.specialists {
+	.wrapper();
+	padding-top: 30px;
+	padding-bottom: 20px;
+
+	.lg-block( {
+			padding-top: 100px;
+			padding-bottom: 70px;
+		}
+
+	);
+
+}
+
+.specialists__row {
+	.row-flex();
+	display: flex;
+	justify-content: center;
+	text-align: center;
+
+	h3 {
+		.col();
+		.size(12);
+		font-weight: bold;
+		font-size: 34px;
+		line-height: 140%;
+		margin-bottom: 20px;
+
+		.lg-block( {
+				margin-bottom: 40px;
+			}
+
+		);
+	}
+}
+
+.specialists__card {
+	.col();
+	.size(12);
+	.row-flex();
+	justify-content: center;
+}
+
+.specialists__card__item {
+	.col();
+	.size(12);
+	.size-sm(9);
+	.size-md(6);
+	.size-lg(4);
+	.size-xl(3.3);
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #D6D6D6;
+	align-items: center;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #000;
+	margin-bottom: 25px;
+	transition: all 0.3s ease;
+	text-align: center;
+
+	.lg-block( {
+			margin-bottom: 50px;
+		}
+
+	);
+
+	&--title {
+		margin: 0;
+		max-width: 270px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	&--text {
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 140%;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 20px;
+	}
+}
+
+.specialists__card__img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	margin-bottom: 20px;
+	overflow: hidden;
+	box-sizing: border-box;
+
+	img {
+		width: 100%;
+		border-radius: 10px 10px 0 0;
+		// transition: all 0.3s ease;
+		// object-position: center;
+
+	}
+}

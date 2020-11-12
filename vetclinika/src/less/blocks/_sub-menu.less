@@ -1,0 +1,39 @@
+.sub__menu {
+	.col();
+	.size(12);
+	.size-lg(11);
+	text-align: left;
+	margin-bottom: 25px;
+
+	.lg-block( {
+			margin-bottom: 60px;
+		}
+
+	);
+
+	a {
+		display: inline-block;
+		position: relative;
+		padding-right: 20px;
+		font-size: 14px;
+		line-height: 140%;
+		color: #000;
+
+		&::after {
+			content: ">";
+			position: absolute;
+			display: block;
+			top: 0;
+			right: 5px;
+		}
+
+		&:last-child {
+			padding-right: 0;
+
+			&::after {
+				content: "";
+				display: block;
+			}
+		}
+	}
+}

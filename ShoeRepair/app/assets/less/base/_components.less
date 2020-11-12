@@ -1,0 +1,109 @@
+.bottom__components() {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: @text-color;
+    background-color: #fff;
+    padding: 10px 37px 13px 37px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in;
+    outline: none;
+
+    @media (min-width: 768px) {
+        font-size: 23px;
+    }
+
+    &:active,
+    &:hover {
+
+        color: #fff;
+        background-color: #532824;
+        text-decoration: none;
+
+        @media (min-width: 992px) {
+            box-shadow: 0px 0px 40px 0px rgba(83, 40, 36, 1);
+        }
+    }
+}
+
+.title__components() {
+    font-size: 32px;
+    font-weight: 600;
+
+    @media (min-width: 576px) {
+        font-size: 36px;
+        // margin-bottom: 55px;
+    }
+}
+
+.title__card() {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 0 10px;
+    margin-bottom: 25px;
+}
+
+.text__card() {
+    text-align: left;
+    font-weight: 600;
+    font-size: 17px;
+
+    @media (min-width: 992px) {
+        font-size: 18px;
+    }
+}
+
+.vk__hover() {
+    color: @color-vk;
+
+    @media (min-width: 992px) {
+        color: #fff;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: @color-vk  !important;
+        }
+    }
+}
+
+.ista__hover() {
+    color: @color-insta;
+
+    @media (min-width: 992px) {
+        color: #fff;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: @color-insta  !important;
+        }
+    }
+}
+
+.viber__hover() {
+    color: @color-viber;
+
+    @media (min-width: 992px) {
+        color: #fff;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: @color-viber  !important;
+        }
+    }
+}
+
+.phone__hover() {
+
+    @media (min-width: 992px) {
+        color: #fff;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: @color-navigation  !important;
+        }
+    }
+}

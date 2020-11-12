@@ -1,0 +1,21 @@
+# NeLomay_V2
+/node_modules/
+/**/node_modules/
+/nelomay_v2/
+/OLD/
+/Portfolio/
+/dist 
+/**/dist
+*.rar
+/1/
+/text/
+package-lock.json
+.DS_Store
+Thumbs.db
+.idea
+*.sublime*
+*.log
+*.npmrc
+*.ai
+*.psd
+*.pdf

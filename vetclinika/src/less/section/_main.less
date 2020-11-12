@@ -1,0 +1,96 @@
+.main {
+	// width: 100%;
+	display: none;
+	position: relative;
+	margin-top: -70px;
+	z-index: -1;
+	padding-top: 100px;
+	color: #fff;
+	background: linear-gradient(180deg, #B4A0CE 4.47%, #5A69A2 111.62%);
+	.lg(display, block)
+}
+
+.main__wrapper {
+	.wrapper();
+	position: relative;
+
+	&::before {
+		content: "";
+		background-image: url('../images/dog.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		display: inline-block;
+		position: absolute;
+		width: 600px;
+		height: 600px;
+		right: 0;
+		// top: 15px;
+		bottom: -81px;
+	}
+}
+
+.main__row {
+	.row-flex();
+	flex-direction: column;
+
+}
+
+.main__content {
+	.col();
+	.size(6);
+	.shift-left(0.5);
+	margin-bottom: 50px;
+
+	h1 {
+		font-family: Raleway;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 130%;
+	}
+
+	p {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 140%;
+	}
+}
+
+.main__card {
+	.row-flex();
+	.col();
+	.size(6);
+	margin-bottom: 100px;
+}
+
+.main__card__item {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	.col();
+	.size(4);
+}
+
+.main__card__img--1 {
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+
+	&::before {
+		z-index: -1;
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		right: 48%;
+		top: 15px;
+		border-radius: 50%;
+		background-color: #fff;
+	}
+}

@@ -1,0 +1,177 @@
+.dark__theme {
+	// background-color: inherit;
+
+	&.header {
+		background-color: inherit;
+		color: #fff;
+
+		a {
+			color: #fff;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			border-radius: 0 0 30px 0;
+			background-color: #2d2d3a;
+			position: absolute;
+			min-width: 100vw;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+
+			.md-block( {
+					right: 120px;
+				}
+
+			);
+		}
+
+
+	}
+
+	&.header__content {
+		background-color: inherit;
+	}
+
+	&.header__nav__phone {
+		background-color: inherit;
+	}
+
+	&>.baseblock__content__title {
+		color: #fff;
+		background-color: inherit;
+	}
+
+	&>.header__content__subtitle {
+		color: #fff;
+		background-color: inherit;
+	}
+
+	&>.header__content__text {
+		color: #fff;
+		background-color: inherit;
+	}
+
+	&>.card__text {
+		color: #fff;
+	}
+
+	&>.baseblock__content__subtitle {
+		color: #fff;
+		background-color: inherit;
+	}
+
+	&>.baseblock__content {
+		background-color: inherit;
+	}
+
+	&.baseblock__content a {
+		color: #fff;
+	}
+
+	&.profit__card {
+		background-color: @btn-color;
+	}
+
+	&.profit__card__img {
+		background-color: inherit;
+	}
+
+	&.profit__card__namber {
+		background-color: inherit;
+	}
+
+	&>.button__popup {
+		background-color: @btn-color;
+		// background-color: rgba(0, 0, 0, 0.2);
+		color: #fff;
+
+		&:hover {
+			background-color: @btn-color-hover;
+		}
+	}
+
+	&.questions {
+		background-color: inherit;
+		color: #fff;
+
+		&::before {
+			content: "";
+			display: block;
+			border-radius: 0 30px 30px 0;
+			background-color: #2d2d3a;
+			position: absolute;
+			min-width: 100vw;
+			height: 100%;
+			top: -40px;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+
+			.md-block( {
+					right: 120px;
+				}
+
+			);
+		}
+	}
+
+	&.table__row {
+		background-color: inherit;
+	}
+
+	&.forms__wraper {
+		background-color: #2d2d3a;
+	}
+
+	&.table__title--1 {
+		background-color: #9296f2;
+		color: #fff;
+	}
+
+	&.table__title--2 {
+		background-color: #f6a970;
+		color: #fff;
+	}
+
+	&.forms__items {
+		background-color: inherit;
+		color: #fff;
+	}
+
+	&.forms__items input {
+		background-color: #3c3c48;
+		color: #fff;
+
+		&:active,
+		&:focus {
+			color: #fff;
+		}
+	}
+
+	&.popup__consultation {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	&.popup__content {
+		background-color: #2d2d3a;
+	}
+
+	&.popup__wrap {
+		background-color: inherit;
+		color: #fff;
+	}
+
+	&.popup__wrap input {
+		background-color: #3c3c48;
+		color: #fff;
+
+		&:active,
+		&:focus {
+			color: #fff;
+		}
+	}
+}

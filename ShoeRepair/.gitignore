@@ -1,0 +1,7 @@
+# Voronina
+/node_modules/
+/psd/
+*.rar
+/1/
+/text/
+package-lock.json

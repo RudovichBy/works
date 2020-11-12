@@ -1,0 +1,157 @@
+.statistics {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	text-align: left;
+
+	.md-block( {
+			padding-top: 100px;
+			padding-bottom: 140px;
+		}
+
+	);
+
+	&__title {
+		.col();
+		.size(12);
+		margin-bottom: 40px;
+	}
+}
+
+.notation {
+	font-size: 12px;
+	color: #8c939d;
+	margin-left: 15px;
+}
+
+.table {
+	.col();
+	.size(12);
+	.size-sm(6);
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid #EAEBFB;
+	border-radius: 10px;
+	max-width: 570px;
+	margin-bottom: 20px;
+
+	.sm-block( {
+			display: flex !important;
+		}
+
+	);
+
+	&__toggle {
+		.col-padding();
+		.size(6);
+		cursor: pointer;
+		margin: 0;
+		text-align: center;
+		font-size: 16px;
+		padding-bottom: 15px;
+		margin-bottom: 30px;
+		color: #dee4ec;
+		border-bottom: 2px solid #dee4ec;
+
+		.sm-block( {
+				display: none;
+				font-size: 18px;
+			}
+
+		);
+
+		&--active {
+			color: @btn-color;
+			border-bottom: 2px solid @btn-color;
+		}
+	}
+
+	&--2 {
+		border: 1px solid #FFE4E1;
+		display: none;
+
+		.sm-block( {
+				display: flex;
+			}
+
+		);
+
+		.table__row {
+			border-bottom: 1px solid #FFE4E1;
+
+			&:nth-child(2n) {
+				border-right: 1px solid #FFE4E1;
+			}
+
+			&:nth-child(2n+1) {
+				border-left: none;
+			}
+		}
+	}
+
+	&__date {
+		background-color: #F9F9FD;
+
+		img {
+			margin-right: 5px;
+		}
+	}
+
+	&__title {
+		width: 100%;
+		text-align: center;
+		font-size: 20px;
+		padding: 20px 0;
+		border-bottom: 1px solid #EAEBFB;
+		border-radius: 10px 10px 0 0;
+		display: none;
+
+		.sm-block( {
+				display: block;
+			}
+
+		);
+
+		&--1 {
+			background-color: #EAEBFB;
+			color: @btn-color;
+		}
+
+		&--2 {
+			display: none;
+			background-color: #FFE4E1;
+			color: #FF7262;
+
+			.sm-block( {
+					display: block;
+				}
+
+			);
+		}
+	}
+
+	&__row {
+		text-align: center;
+		padding: 20px 0;
+		width: 50%;
+		font-size: 16px;
+		border-bottom: 1px solid #EAEBFB;
+
+		&:nth-child(2n) {
+			border-right: 1px solid #EAEBFB;
+
+		}
+
+		&:nth-child(2n+1) {
+			border-left: none;
+		}
+
+		&:nth-last-child(1),
+		&:nth-last-child(2) {
+			border-bottom: none;
+		}
+	}
+}
+
+.active {
+	display: flex !important;
+}

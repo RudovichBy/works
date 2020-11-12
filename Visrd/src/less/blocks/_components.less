@@ -1,0 +1,161 @@
+.checkbox__wrapper {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	min-width: 94px;
+
+	label {
+		left: -17px;
+		position: relative;
+		display: inline-block;
+		word-wrap: break-word;
+		cursor: pointer;
+	}
+
+	label::before,
+	label::after {
+		position: absolute;
+		display: block;
+		content: "";
+	}
+
+	label::before {
+		top: 0;
+		width: 36px;
+		height: 20px;
+		border-radius: 10px;
+		border: 1px solid #CAD2DD;
+		background-color: #CAD2DD;
+	}
+
+	label::after {
+		top: 1px;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background-color: #ffffff;
+		transition-timing-function: ease-in;
+		transition-duration: 200ms;
+	}
+
+	input[type="checkbox"] {
+		display: none;
+	}
+
+	input[type="checkbox"]:checked~label::after {
+		transform: translateX(17px);
+	}
+
+	input[type="checkbox"]:checked~label::before {
+		background-color: @btn-color;
+		border: 1px solid @btn-color;
+	}
+}
+
+.button {
+	display: inline-block;
+	background-color: @btn-color;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 10px;
+	padding: 20px 50px;
+	text-decoration: none;
+	transition: @transition;
+
+	&:hover {
+		background-color: @btn-color-hover;
+	}
+
+	&:active {
+		background-color: @btn-color-active;
+	}
+}
+
+.button__popup {
+	padding: 10px 12px;
+	cursor: pointer;
+	color: @btn-color-hover;
+	font-size: 14px;
+	border-radius: 7px;
+	background-color: #E8E8E8;
+	transition: @transition;
+
+	&:hover,
+	&:active {
+		color: #fff;
+		background-color: @btn-color;
+	}
+}
+
+.card {
+	.col();
+	.size(12);
+	.size-sm(9);
+	.size-md(6);
+	.size-lg(3.5);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 30px;
+
+	svg {
+		margin-right: 15px;
+		width: 50px;
+		height: 50px;
+	}
+
+	&__title {
+		font-size: 20px;
+	}
+
+	&__text {
+		font-size: 18px;
+		color: #8C939D;
+	}
+}
+
+.decor__link {
+	text-decoration: none;
+	color: #272734;
+	text-decoration: none;
+	position: relative;
+
+
+	&::after {
+		position: absolute;
+		bottom: 1px;
+		left: 0;
+		right: 0;
+		content: "";
+		display: inline-block;
+		border-bottom: 2px solid @btn-color;
+	}
+}
+
+table {
+	width: 100%;
+	// display: block;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-radius: 0 5px 5px 0;
+	margin-bottom: 30px;
+}
+
+table,
+td,
+th {
+	border: 1px solid #595959;
+}
+
+td,
+th {
+	padding: 20px 90px;
+	font-weight: 16px;
+	// width: 30px;
+	// height: 35px;
+}
+
+th {
+	background-color: #7accee;
+}

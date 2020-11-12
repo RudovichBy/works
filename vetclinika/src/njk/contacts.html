@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>Услуги</title>
+	<meta name="description" content="Описание сайта">
+	<meta name="keywords" content="ключивые слова">
+	<meta name="subject" content="Описание сайта">
+	<meta name="geo.placename" content="Беларусь, Минск">
+	<meta name="geo.region" content="RU-Минск">
+	<meta name="author" content="Loosemaster.ru">
+	<meta name="copyright" content="Loosemaster.ru">
+	<meta name="robots" content="index, follow">
+	<meta name="googlebot" content="index, follow">
+	<meta name="google" content="nositelinkssearchbox">
+	<meta name="google" content="notranslate">
+	<meta name="document-state" content="dynamic">
+	<!-- <link rel="canonical" href="https://...name"> -->
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+	<link rel="icon" type="image/png" href="/assets/images/favicon/favicon.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="assets/css/styles.css?v=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		{% include "./partials/header.njk" %}
+		<div class="news">
+			<section class="news__container">
+				<div class="sub__menu">
+					<a href="index.html">Главная</a>
+					<a href="contacts.html">Контакты</a>
+				</div>
+				<h3>Контакты</h3>
+				<div class="contacts__row">
+					<div class="contacts__item contacts__item__adres">
+						<div class="img__decorative"><img src="./assets/images/footer-adres.svg" alt="адрес"></div>
+
+						<div>г. Саратов, ул. Большая Садовая, д. 220. Территория СГАУ им. Вавилова. Учебный комплекс №3.
+						</div>
+					</div>
+					<div class="contacts__item contacts__item__phone">
+						<div class="img__decorative"><img src="./assets/images/footer-phone.svg" alt="телефон"></div>
+						<ul>
+							<li><a href="#">(8452) 323-500, 677-557</a></li>
+							<li><a href="#">8(8452) 677-557 (регистратура с 08.15 до 20.45).</a></li>
+							<li><a href="#">8(8452) 323-600 (Стационар)</a></li>
+							<li><a href="#">8(8452) 347-099 (Лаборатория)</a></li>
+							<li><a href="#">8(8452) 347-028 (Вызов врача на дом, с 9.00 до 21.00)</a></li>
+						</ul>
+					</div>
+
+					<div class="contacts__item contacts__item__mail">
+						<div class="img__decorative"><img src="./assets/images/footer-mail.svg" alt="почта"></div>
+						<div>
+							<a href="#">vethospital@yandex.ru (связь с главным врачом)</a>
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+		<div class="contacts">
+			<div class="contacts__maps contacts__maps--full" id="wrapMap">
+				<iframe
+					src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac985e53324fb02c548f6c2341b95356df4e1e28da4a569d6436f4622e2b168d0&amp;source=constructor"
+					width="100%" height="100%" frameborder="0" style="pointer-events: none;"></iframe>
+			</div>
+		</div>
+		{% include "./partials/footer.njk" %}
+	</div>
+	<script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

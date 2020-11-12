@@ -1,0 +1,21 @@
+.header__about {
+	text-align: center;
+
+	h1,
+	h2 {
+		font-family: @font-baron-black;
+		text-transform: lowercase;
+	}
+
+	&::before {
+		opacity: 0;
+	}
+
+	.cat__header__block {
+		background-color: rgba(#2c2f33, 0.8);
+
+		&:before {
+			opacity: 0.12;
+		}
+	}
+}
