@@ -1,0 +1,85 @@
+.breakdowns {
+	width: 100%;
+	background: #1e1e1e;
+	position: relative;
+
+	.md-block( {
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				top: 0;
+				right: 0;
+				// background-image: linear-gradient(rgba(#000000, 0.7), rgba(#000000, 0.5)), url('../images/background/huawei-mate-20-1.jpg');
+				background-image: linear-gradient(rgba(#000000, 0.4)), url('../images/background/huawei-mate-20-1.jpg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+		}
+
+	);
+
+	& .row {
+		justify-content: start;
+	}
+}
+
+.breakdowns__col {
+	.col();
+	.size(12);
+	.size-md(6);
+	margin-bottom: 30px;
+	.md(margin-bottom, 50px);
+}
+
+.title__custom {}
+
+.breakdowns__title {
+	color: #ffffff;
+}
+
+.breakdowns__items__diagram {
+	background: linear-gradient(to right, #2052c9, #21a5dd);
+	// height: 70px;
+	padding: 25px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	color: #ffffff;
+	border-radius: 100px;
+	margin-bottom: 20px;
+}
+
+.diagram__text {
+	font-size: 14px;
+}
+
+.diagram__percent {
+	font-size: 16px;
+}
+
+.diagram {
+	&-1 {
+		width: 95%;
+	}
+
+	&-2 {
+		width: 75%;
+	}
+
+	&-3 {
+		width: 75%;
+	}
+
+	&-4 {
+		width: 60%;
+	}
+
+	&-5 {
+		width: 50%;
+	}
+}

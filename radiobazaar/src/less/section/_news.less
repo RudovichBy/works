@@ -1,0 +1,140 @@
+.news {
+	width: 100%;
+	padding: 20px 0;
+
+	&__title {
+		margin: 0;
+		margin-bottom: 20px;
+
+		a {
+			color: #000000;
+			font-size: 28px;
+			font-weight: bold;
+			font-family: @font-sf-bold;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+
+
+	&__items {
+		.col();
+		.size(12);
+		.size-sm(6);
+		.size-md(4);
+		text-align: left;
+		font-family: @font-sf-regular;
+		transition: @transition;
+		margin-bottom: 50px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #e2e2e2;
+
+		.md-block( {
+				padding-bottom: 0;
+				border-bottom: none;
+			}
+
+		);
+
+		// &:hover {
+		// 	box-shadow: 0px 0px 10px -4px rgba(@darck-color, 0.2);
+		// }
+	}
+
+	&__img {
+		width: 100%;
+		margin-bottom: 25px;
+
+		.pattern {
+			border-radius: 20px;
+
+			&::before {
+				border-radius: 20px;
+			}
+
+			&:hover {
+				.news__date {
+					background: linear-gradient(to right, #2052c9, #21a5dd);
+				}
+			}
+		}
+
+		a {
+			display: inline-block;
+			width: 100%;
+			color: #ffffff;
+			position: relative;
+		}
+
+		img {
+			border-radius: 20px;
+			// position: absolute;
+			// top: 0;
+			// bottom: 0;
+			// left: 0;
+			// right: 0;
+			// object-position: center;
+			// object-fit: cover;
+		}
+
+		.news__date {
+			padding: 10px 20px;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background-color: #4a4a4a;
+			z-index: 2;
+			border-radius: 0px 20px 0px 20px;
+			transition: background 0.25s ease;
+		}
+	}
+
+	&__text {
+		font-family: ;
+		font-weight: normal;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	&__btn {
+		// padding: 5px 20px;
+		font-family: @font-sf-bold;
+		margin: 30px 0;
+		color: #000000;
+		font-size: 22px;
+		// text-decoration: underline;
+		position: relative;
+		padding-bottom: 5px;
+		transition: @transition;
+
+		&::after {
+			display: inline-block;
+			content: '';
+			height: 3px;
+			background-color: #000000;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			border-radius: 15px;
+		}
+
+		&:hover {
+			&::after {
+				background: linear-gradient(to right, #2052c9, #21a5dd);
+			}
+		}
+	}
+}
+
+.row__title {
+	.col();
+	.size(12);
+	// text-align: center;
+	margin-bottom: 30px;
+	.md(text-align, center);
+}

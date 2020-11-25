@@ -38,15 +38,15 @@ window.addEventListener('DOMContentLoaded', () => {
 	//=================================================================
 
 
-	//==============================Swiper==============================
+	//==============================Swiper=============================
 
-	var mySwiper = new Swiper('.swiper-container', {
+	let mySwiper = new Swiper('.swiper-container', {
 		loop: true,
 		speed: 800,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false,
-		},
+		// autoplay: {
+		// 	delay: 3000,
+		// 	disableOnInteraction: false,
+		// },
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
@@ -59,16 +59,65 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 	//Липкое/закрепить меню навигации
+	{
+		window.onscroll = function () {
+			myFunction()
+		};
+
+		let navbar = document.getElementById("navbar");
+		window.addEventListener('scroll', () => {
+			if (document.documentElement.scrollTop > 0) {
+				navbar.classList.add("sticky")
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		});
+	}
+	//=================================================================
+
+
+	//========================Scroll Indicator========================
 	window.onscroll = function () {
 		myFunction()
 	};
 
-	let navbar = document.getElementById("navbar");
-	window.addEventListener('scroll', () => {
-		if (document.documentElement.scrollTop > 0) {
-			navbar.classList.add("sticky")
-		} else {
-			navbar.classList.remove("sticky");
-		}
+	function myFunction() {
+		let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+		let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		let scrolled = (winScroll / height) * 100;
+		document.getElementById("myBar").style.width = scrolled + "%";
+	}
+	//=================================================================
+
+
+	//============================accordion============================
+
+	let accordion = document.querySelectorAll(".repairoptions__accordion");
+	let panelAll = document.querySelectorAll('.panel');
+	panelAll.forEach(item => {
+		if (item.classList.contains('panel__open'))
+			item.style.maxHeight = item.scrollHeight + 'px';
 	});
+	for (let i = 0; i < accordion.length; i++) {
+		accordion[i].addEventListener('click', function () {
+			// panelAll.forEach(item => {
+			// 	item.classList.remove('panel__open');
+			// });
+			let panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+				this.classList.remove('accordion__open');
+			} else {
+				for (let x = 0; x < accordion.length; x++) {
+					accordion[x].classList.remove('accordion__open')
+					accordion[x].nextElementSibling.style.maxHeight = null;
+
+				}
+				panel.style.maxHeight = panel.scrollHeight + 'px';
+				this.classList.toggle('accordion__open');
+				panel.classList.remove('panel__open');
+			}
+		})
+	}
+	//================================================================
 });

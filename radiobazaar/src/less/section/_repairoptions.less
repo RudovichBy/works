@@ -1,0 +1,103 @@
+.repairoptions {
+	width: 100%;
+	background: #1e1e1e;
+	position: relative;
+
+	.md-block( {
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				// background-image: linear-gradient(rgba(#000000, 0.7), rgba(#000000, 0.5)), url('../images/phone/Galaxy-S10-HD-6.jpg');
+				background-image: linear-gradient(rgba(#000000, 0.4)), url('../images/phone/Galaxy-S10-HD-6.jpg');
+				// opacity: 0.7;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+		}
+
+	);
+
+	& .row {
+		justify-content: flex-end;
+	}
+
+	&__col {
+		.col();
+		.size(12);
+		.size-md(6);
+		margin-bottom: 20px;
+		.md(margin-bottom, 30px);
+	}
+
+	&__title {
+		color: #ffffff;
+	}
+
+}
+
+.accordion__wrapper {
+	font-size: 16px;
+	color: #ffffff;
+}
+
+.repairoptions__accordion {
+	position: relative;
+	background: linear-gradient(to right, #2052c9, #21a5dd);
+	// height: 70px;
+	padding: 15px 30px 15px 20px;
+	margin-top: 5px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+
+	&:after {
+		content: '+';
+		// content: '\02795';
+		position: absolute;
+		display: inline-block;
+		font-size: 18px;
+		font-weight: bold;
+		color: #ffffff;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 5px;
+	}
+}
+
+
+.accordion__open:after {
+	content: "-";
+	display: inline-block;
+	position: absolute;
+	font-size: 20px;
+	font-weight: bold;
+	color: #ffffff;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 5px;
+}
+
+.accordion__text {}
+
+.accordion__sum {}
+
+.panel {
+	background-color: rgba(#ffffff, 0.4);
+
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.panel__open {
+	// max-height: 100%;
+}

@@ -1,0 +1,47 @@
+.scrap {
+	margin-top: 20px;
+	width: 100%;
+	background-color: #f4f4f4;
+	padding: 30px 0;
+	z-index: -2;
+
+	.lg-block( {
+			padding: 20px 0;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-image: url('../images/background/bg-fon-1.jpg');
+		}
+
+	);
+
+	& .row {
+		justify-content: start;
+	}
+
+	&__col {
+		.col();
+		.size(12);
+		.size-lg(6);
+		text-align: left;
+
+		p {
+			margin: 0;
+			margin-bottom: 25px;
+		}
+
+		&--right {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&__btn {
+		margin: 0;
+	}
+
+	&__text {
+		font-size: 16px;
+	}
+}
