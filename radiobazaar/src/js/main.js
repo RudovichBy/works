@@ -120,4 +120,175 @@ window.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 	//================================================================
+
+	//**************************плавный скрол**************************	
+	function scrolling(upSelector) {
+		const upElem = document.querySelector(upSelector);
+
+		window.addEventListener('scroll', () => {
+			if (document.documentElement.scrollTop > 800) {
+				upElem.classList.add('animated', 'fadeIn');
+				upElem.classList.remove('fadeOut');
+			} else {
+				upElem.classList.add('fadeOut');
+				upElem.classList.remove('fadeIn');
+			}
+		});
+
+		let links = document.querySelectorAll('[href^="#"]'),
+			speed = 0.3;
+
+		links.forEach(link => {
+			link.addEventListener('click', function (event) {
+				event.preventDefault();
+
+				let widthTop = document.documentElement.scrollTop,
+					hash = this.hash,
+					toBlock = document.querySelector(hash).getBoundingClientRect().top,
+					start = null;
+
+				requestAnimationFrame(step);
+
+				function step(time) {
+					if (start === null) {
+						start = time;
+					}
+
+					let progress = time - start,
+						r = (toBlock < 0 ? Math.max(widthTop - progress / speed, widthTop + toBlock) : Math.min(widthTop + progress / speed, widthTop + toBlock));
+
+					document.documentElement.scrollTo(0, r);
+
+					if (r != widthTop + toBlock) {
+						requestAnimationFrame(step);
+					} else {
+						location.hash = hash;
+					}
+				}
+			});
+		});
+
+	};
+
+	scrolling('.pageup');
+	//=================================================================
+
+
+	// оптимезация карты
+	let yndexMap = () => {
+
+		// создаём элемент <div>, который будем перемещать вместе с указателем мыши пользователя
+		const mapTitle = document.createElement('div');
+		mapTitle.className = 'mapTitle';
+		// вписываем нужный нам текст внутрь элемента
+		mapTitle.textContent = 'Для активации карты нажмите на неё';
+		// добавляем элемент с подсказкой последним элементов внутрь нашего <div> с id wrapMap
+		wrapMap.appendChild(mapTitle);
+		// по клику на карту
+		wrapMap.onclick = function () {
+			// убираем атрибут "style", в котором прописано свойство "pointer-events"
+			this.children[0].removeAttribute('style');
+			// удаляем элемент с интерактивной подсказкой
+			mapTitle.parentElement.removeChild(mapTitle);
+		}
+		// по движению мыши в области карты
+		wrapMap.onmousemove = function (event) {
+			// показываем подсказку
+			mapTitle.style.display = 'block';
+			// двигаем подсказку по области карты вместе с мышкой пользователя
+			if (event.offsetY > 10) mapTitle.style.top = event.offsetY + 20 + 'px';
+			if (event.offsetX > 10) mapTitle.style.left = event.offsetX + 20 + 'px';
+		}
+		// при уходе указателя мыши с области карты
+		wrapMap.onmouseleave = function () {
+			// прячем подсказку
+			mapTitle.style.display = 'none';
+		}
+	}
+	yndexMap();
+
+
+	const modals = () => {
+		let btnPressed = false;
+
+		function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false) {
+			const trigger = document.querySelectorAll(triggerSelector),
+				modal = document.querySelector(modalSelector),
+				close = document.querySelector(closeSelector),
+				windows = document.querySelectorAll('[data-modal]'),
+				scroll = calcScroll();
+
+			trigger.forEach(item => {
+				item.addEventListener('click', (e) => {
+					if (e.target) {
+						e.preventDefault();
+					}
+					btnPressed = true;
+
+					if (destroy) {
+						item.remove();
+					}
+
+					windows.forEach(item => {
+						item.style.display = 'none';
+
+						//добавляем анимацию для popup(должна быть подключена библиотека animate.css)
+						item.classList.add('animated', 'fadeIn');
+					});
+
+					modal.style.display = "block";
+					document.body.style.overflow = "hidden";
+					document.body.style.marginRight = `${scroll}px`;
+				});
+			});
+
+			// закрытие poopup
+			close.addEventListener('click', () => {
+				windows.forEach(item => {
+					item.style.display = 'none';
+				});
+
+				modal.style.display = "none";
+				document.body.style.overflow = "";
+				document.body.style.marginRight = `0px`;
+			});
+
+			modal.addEventListener('click', (e) => {
+				if (e.target === modal) {
+					windows.forEach(item => {
+						item.style.display = 'none';
+					});
+
+					modal.style.display = "none";
+					document.body.style.overflow = "";
+					document.body.style.marginRight = `0px`;
+				}
+			});
+		}
+
+
+		// убираем сдвиг странице при появлении popup
+		function calcScroll() {
+			let div = document.createElement('div');
+
+			div.style.width = '50px';
+			div.style.height = '50px';
+			div.style.overflowY = 'scroll';
+			div.style.visibility = 'hidden';
+
+			document.body.appendChild(div);
+			let scrollWidth = div.offsetWidth - div.clientWidth;
+			div.remove();
+
+			return scrollWidth;
+		}
+
+
+
+		bindModal('.shop__btn', '.popup-consultation', '.popup-consultation .popup-close');
+		bindModal('.scrap__btn', '.popup-gift', '.popup-gift .popup-close');
+		openByScroll('.fixed-gift');
+		// showModalByTime('.popup-consultation', 60000);
+	};
+	modals();
 });

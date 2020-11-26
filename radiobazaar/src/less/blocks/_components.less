@@ -41,17 +41,19 @@
 		position: absolute;
 		left: 0;
 		bottom: -10px;
-		width: 15%;
+		width: 20%;
 		height: 5px;
 		border-radius: 15px;
 		background: linear-gradient(to right, #2052c9, #21a5dd);
 	}
 }
 
+// =================прогрес-бар=================
 .progress-container {
 	width: 100%;
 	height: 3px;
 }
+
 
 .progress-bar {
 	height: 3px;
@@ -59,6 +61,10 @@
 	width: 0%;
 }
 
+//==============================================
+
+
+// ===================оснавная кнопка===================
 .btn {
 	.button-reset;
 	background-color: inherit;
@@ -106,6 +112,10 @@
 	}
 }
 
+//======================================================
+
+
+//=============эффект при на ведении на блок новости=============
 .pattern {
 	background-color: @darck-color;
 	position: relative;
@@ -151,10 +161,34 @@
 	// }
 }
 
+//=============================================================
 
+//==========================кнопка в вверх==========================
+.pageup {
+	opacity: 0;
+	width: 43px;
+	height: 43px;
+	position: fixed;
+	bottom: 50px;
+	right: 5%;
+	z-index: 30;
+	cursor: pointer;
+	transition: 1s all;
+	fill: @accent-color;
+}
 
 //=======================================================================
 
+.icon__svg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	svg {
+		width: 30px;
+		fill: #ffffff;
+	}
+}
 
 // .overlay {
 // 	background-size: cover;

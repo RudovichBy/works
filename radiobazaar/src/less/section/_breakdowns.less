@@ -1,9 +1,12 @@
 .breakdowns {
 	width: 100%;
-	background: #1e1e1e;
+	background: @bg-color;
 	position: relative;
+	border-bottom: 1px solid rgba(#cccccc, 0.1);
 
 	.md-block( {
+			border-bottom: none;
+
 			&::after {
 				content: "";
 				display: block;
@@ -44,7 +47,7 @@
 .breakdowns__items__diagram {
 	background: linear-gradient(to right, #2052c9, #21a5dd);
 	// height: 70px;
-	padding: 25px;
+	padding: 5px 10px;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
@@ -52,6 +55,8 @@
 	color: #ffffff;
 	border-radius: 100px;
 	margin-bottom: 20px;
+	.sm(padding, 20px);
+	.md(padding, 25px);
 }
 
 .diagram__text {
