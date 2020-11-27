@@ -43,10 +43,10 @@ window.addEventListener('DOMContentLoaded', () => {
 	let mySwiper = new Swiper('.swiper-container', {
 		loop: true,
 		speed: 800,
-		// autoplay: {
-		// 	delay: 3000,
-		// 	disableOnInteraction: false,
-		// },
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
@@ -60,12 +60,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	//Липкое/закрепить меню навигации
 	{
-		window.onscroll = function () {
-			myFunction()
-		};
-
+		// window.onscroll = function () {
+		// 	myFunction()
+		// };
 		let navbar = document.getElementById("navbar");
 		window.addEventListener('scroll', () => {
+
 			if (document.documentElement.scrollTop > 0) {
 				navbar.classList.add("sticky")
 			} else {
@@ -126,6 +126,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		const upElem = document.querySelector(upSelector);
 
 		window.addEventListener('scroll', () => {
+
 			if (document.documentElement.scrollTop > 800) {
 				upElem.classList.add('animated', 'fadeIn');
 				upElem.classList.remove('fadeOut');
@@ -209,9 +210,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 	const modals = () => {
-		let btnPressed = false;
-
-		function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false) {
+		function bindModal(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true) {
 			const trigger = document.querySelectorAll(triggerSelector),
 				modal = document.querySelector(modalSelector),
 				close = document.querySelector(closeSelector),
@@ -223,16 +222,9 @@ window.addEventListener('DOMContentLoaded', () => {
 					if (e.target) {
 						e.preventDefault();
 					}
-					btnPressed = true;
-
-					if (destroy) {
-						item.remove();
-					}
 
 					windows.forEach(item => {
 						item.style.display = 'none';
-
-						//добавляем анимацию для popup(должна быть подключена библиотека animate.css)
 						item.classList.add('animated', 'fadeIn');
 					});
 
@@ -242,7 +234,6 @@ window.addEventListener('DOMContentLoaded', () => {
 				});
 			});
 
-			// закрытие poopup
 			close.addEventListener('click', () => {
 				windows.forEach(item => {
 					item.style.display = 'none';
@@ -251,10 +242,11 @@ window.addEventListener('DOMContentLoaded', () => {
 				modal.style.display = "none";
 				document.body.style.overflow = "";
 				document.body.style.marginRight = `0px`;
+				// document.body.classList.remove('modal-open');
 			});
 
 			modal.addEventListener('click', (e) => {
-				if (e.target === modal) {
+				if (e.target === modal && closeClickOverlay) {
 					windows.forEach(item => {
 						item.style.display = 'none';
 					});
@@ -266,8 +258,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 		}
 
-
-		// убираем сдвиг странице при появлении popup
 		function calcScroll() {
 			let div = document.createElement('div');
 
@@ -283,12 +273,12 @@ window.addEventListener('DOMContentLoaded', () => {
 			return scrollWidth;
 		}
 
-
-
-		bindModal('.shop__btn', '.popup-consultation', '.popup-consultation .popup-close');
-		bindModal('.scrap__btn', '.popup-gift', '.popup-gift .popup-close');
-		openByScroll('.fixed-gift');
-		// showModalByTime('.popup-consultation', 60000);
+		bindModal('.scrap__btn', '.popup', '.popup .popup__close');
+		bindModal('.shop__btn', '.popup-2', '.popup-2 .popup__close');
 	};
+
+
 	modals();
+
+
 });
