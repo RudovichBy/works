@@ -1,9 +1,22 @@
-header {
-	min-height: 760px;
-	height: 100%;
-}
-
 .header {
+	min-height: 780px;
+	height: 100%;
+
+	&__other {
+
+		height: 50px;
+
+		.lg-block( {
+				height: 115px;
+			}
+
+		);
+
+		& .header__nav {
+			background-image: linear-gradient(rgba(#000000, 0.65));
+		}
+	}
+
 	&__nav {
 		position: absolute;
 		left: 0;
@@ -22,6 +35,8 @@ header {
 		justify-content: center;
 		font-size: 16px;
 		color: #ffffff;
+		font-family: @font-sf-bold;
+		font-weight: bold;
 
 		.lg-block( {
 				display: flex;
@@ -34,6 +49,8 @@ header {
 			flex-wrap: nowrap;
 			align-items: center;
 			padding: 0 10px;
+			// font-family: @font-sf-bold;
+			font-weight: bold;
 
 			i {
 				font-size: 28px;
@@ -53,7 +70,7 @@ header {
 
 		a {
 			color: #ffffff;
-			font-weight: 400;
+			// font-weight: 400;
 
 		}
 	}
@@ -90,7 +107,7 @@ header {
 	.col();
 	.size(12);
 	display: flex;
-	justify-content: end;
+	justify-content: flex-end;
 	align-items: center;
 	min-height: 50px;
 	position: relative;

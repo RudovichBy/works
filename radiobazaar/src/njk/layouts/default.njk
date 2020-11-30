@@ -1,3 +1,14 @@
+{% if not(title) %}
+{% set title = "Главная" %}
+{% endif %}
+{% if not(description) %}
+{% set description = "Краткое описание" %}
+{% endif %}
+{% if not(keywords) %}
+{% set keywords = "Ключивые слова" %}
+{% endif %}
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,11 +16,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<title>Главная</title>
-	<meta name="description" content="Описание сайта">
-	<meta name="keywords" content="ключивые слова">
-	<meta name="subject" content="Описание сайта">
-	<meta name="geo.placename" content="Беларусь, Минск">
+	<title>{{ title }}</title>
+	<meta name="description" content="{{ description }}">
+
+	<meta name="keywords" content="{{ keywords }}">
+
+	<meta name=" subject" content="{{ title }}">
+
+	<meta name="geo.placename" content="Беларусь, Минск, метро Спортивное, улица Бельского 2">
 	<meta name="geo.region" content="RU-Минск">
 	<meta name="author" content="Loosemaster.ru">
 	<meta name="copyright" content="Loosemaster.ru">
@@ -21,7 +35,6 @@
 	<!-- <link rel="canonical" href="https://...name"> -->
 
 
-
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
@@ -30,15 +43,27 @@
 	<link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="/assets/libs/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/assets/css/styles.css?v=1.1">
 
-	<link rel="stylesheet" href="assets/css/styles.css?v=1.0">
 </head>
 
 <body>
 
+	{% block content %}
+
+	{% endblock %}
 
 
-	<script src="./assets/js/script.js"></script>
+	<!-- Полифил, позволяющий обеспечивать базовые стили HTML5 для Internet Explorer 6-8, Safari 4.x, Firefox 3.x. и iPhone 3.x.  -->
+	<!--[if lt IE 9]>
+	<script src="/assets/libs/html5shiv/es5-shim.min.js"></script>
+	<script src="/assets/libs/html5shiv/html5shiv.min.js"></script>
+	<script src="/assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="/assets/libs/html5shiv/respond.min.js"></script>
+    <![endif]-->
+	<script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+	<script src="/assets/js/script.js"></script>
 </body>
 
 </html>

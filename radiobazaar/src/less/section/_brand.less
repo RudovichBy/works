@@ -1,0 +1,72 @@
+.brand {
+	width: 100%;
+	background-color: #f4f4f4;
+	// padding: 30px 0;
+	padding-bottom: 30px;
+
+	// &__title {
+	// 	.col();
+	// 	.size(12);
+	// 	.size-md(8);
+	// 	.size-lg(6);
+	// }
+
+	&__wrapper {
+		padding: 0 20px;
+		display: flex;
+		width: 100%;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: #ffffff;
+		.u-col(0px);
+		.u-size(12, 12, 0px);
+		border-bottom: 1px solid rgba(#ffffff, 0.1);
+		// background-image: linear-gradient(to right, #2052c9, #21a5dd);
+		padding: 30px 15px;
+
+		.sm-block( {
+				.u-size(6, 12, 0px);
+
+				&:nth-child(2n+1) {
+					border-right: 1px solid rgba(#ffffff, 0.1);
+				}
+			}
+
+		);
+
+		.lg-block( {
+				.u-size(1.5, 12, 0px);
+				border: none;
+
+				&:nth-child(2n+1) {
+					border: none;
+				}
+			}
+
+		);
+
+		&__img {
+			min-width: 150px;
+			max-width: 200px;
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		&__title {
+			margin: 0;
+			font-family: @font-sf-bold;
+			font-size: 20px;
+			// font-family: 'sans-serif';
+			// font-weight: bold;
+			text-align: center;
+		}
+	}
+
+
+}
