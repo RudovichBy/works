@@ -1,0 +1,30 @@
+{% set title = "Карта сайта - RadioBazar" %}
+{% set description = "РадиоБазар - ремонт телефонов, планшетов, навигаторов, часов в Минске, в 100 метрах от метро Спортивное, улица Бельского 2. Продажа аксуссуаров и запчастей к телефонам, планшетам, навигаторам и компъютерам" %}
+{% set keywords = "RadioBazar, ремонт навигаторов в Минске метро Спортивное, аксессуары для навигаторов в Минске метро Спортивное, запчасти для навигаторов в Минске метро Спортивное, Минск метро Спортивное, Ремонт навигаторов Samsung, Ремонт навигаторов Xiaomi, Ремонт навигаторов Huawei, Ремонт навигаторов Meizu, Ремонт навигаторов Apple,
+Ремонт навигаторов Nokia, Ремонт навигаторов HTC, Ремонт навигаторов Lenovo, Ремонт навигаторов Navitel, Ремонт навигаторов Garmin, Ремонт навигаторов GOCLEVER, Ремонт навигаторов Pioneer, Sony, Prology" %}
+
+
+{% extends  "./layouts/otherlayouts.njk" %}
+{% block content %}
+<div class="wrapper">
+	<div class="row">
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="index.html#services-nav">Наши услуги</a>
+				<ul>
+					<li><a href="remont-telefonov.html">Ремонт телефонов</a></li>
+					<li><a href="remont-planshetov.html">Ремонт планшетов</a></li>
+					<li><a href="remont-navigatorov.html">Ремонт навигаторов</a></li>
+					<li><a href="remont-watch.html">Ремонт часов</a></li>
+					<li><a href="shop.html">Продажа аксессуаров и запчастей</a></li>
+				</ul>
+			</li>
+			<li><a href="news.html">Новости</a></li>
+			<li><a href="#contacts">Контакты</a></li>
+		</ul>
+	</div>
+</div>
+
+{% include "./partials/contacts.njk" %}
+{% include "./partials/footer.njk" %}
+{% endblock %}
