@@ -13,15 +13,22 @@
 				top: 0;
 				left: 0;
 				// background-image: linear-gradient(rgba(#000000, 0.7), rgba(#000000, 0.5)), url('../images/phone/Galaxy-S10-HD-6.jpg');
-				background-image: linear-gradient(rgba(#000000, 0.4)), url('../images/phone/Galaxy-S10-HD-6.jpg');
-				// opacity: 0.7;
+				background-image: linear-gradient(rgba(#000000, 0.4)), url('../images/background/Galaxy-S10-SD-6.jpg');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: cover;
+
+
 			}
 		}
 
 	);
+
+	@media screen and (min-width:1900px) {
+		&::after {
+			background-image: linear-gradient(rgba(#000000, 0.4)), url('../images/background/Galaxy-S10-HD-7.jpg');
+		}
+	}
 
 	& .row {
 		justify-content: flex-end;
@@ -49,7 +56,6 @@
 .repairoptions__accordion {
 	position: relative;
 	background: linear-gradient(to right, #2052c9, #21a5dd);
-	// height: 70px;
 	padding: 15px 30px 15px 20px;
 	margin-top: 5px;
 	display: flex;
@@ -60,7 +66,6 @@
 
 	&:after {
 		content: '+';
-		// content: '\02795';
 		position: absolute;
 		display: inline-block;
 		font-size: 18px;
@@ -89,8 +94,6 @@
 	margin-right: 15px;
 }
 
-.accordion__sum {}
-
 .panel {
 	background-color: rgba(#ffffff, 0.4);
 
@@ -98,8 +101,4 @@
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
-}
-
-.panel__open {
-	// max-height: 100%;
 }

@@ -19,7 +19,8 @@ const gulp = require('gulp'),
 	changed = require('gulp-changed'),
 	uglify = require('gulp-uglify-es').default,
 	rename = require("gulp-rename"),
-	nunjucksRender = require('gulp-nunjucks-render');
+	nunjucksRender = require('gulp-nunjucks-render'),
+	webp = require('gulp-webp');
 
 let preproc = {
 	less: 'less',
@@ -46,6 +47,7 @@ let path = {
 		fonts: folderProd + 'dist/assets/fonts/',
 		fonts: folderProd + 'dist/assets/libs/',
 		assets: folderProd + 'dist/assets/',
+		images: folderProd + 'src/assets/images/**/',
 	},
 	src: {
 		folder: folderProd + 'src/',
@@ -57,7 +59,8 @@ let path = {
 		sass: folderProd + 'src/sass/',
 		scss: folderProd + 'src/scss/',
 		stylus: folderProd + 'src/styl/',
-		img: folderProd + 'src/images/**/*.{jpg,jpeg,png,webp,svg}',
+		img: folderProd + 'src/assets/images/**/*.{jpg,jpeg,png,webp,svg}',
+		images: folderProd + 'src/assets/images/**/*.{jpg,jpeg,png}',
 		fonts: folderProd + 'src/fonts/**/*.*',
 		assets: folderProd + 'src/assets/',
 		njk: folderProd + 'src/njk/',
@@ -76,8 +79,8 @@ let path = {
 };
 
 function styles() {
-	return gulp.src(path.src.less + 'styles.*')
-		//gulp.src(path.src.less + '+(styles|styles-ie9).*') //для генерации двух и более файлов стилей
+	// return gulp.src(path.src.less + 'styles.*')
+	return gulp.src(path.src.less + '+(styles|basic).*') //для генерации двух и более файлов стилей
 		.pipe(sourcemaps.init())
 		.pipe(eval(preproc.less)())
 		.pipe(gcmq())
@@ -92,7 +95,8 @@ function styles() {
 }
 
 function stylesBild() {
-	return gulp.src(path.src.less + 'styles.*')
+	// return gulp.src(path.src.less + 'styles.*')
+	return gulp.src(path.src.less + '+(styles|basic).*')
 		.pipe(eval(preproc.less)())
 		.pipe(gcmq())
 		.pipe(autoprefixer({
@@ -109,10 +113,10 @@ function stylesBild() {
 
 function scriptLight() {
 	return gulp.src(path.src.js)
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(rename("script.js"))
 		.pipe(uglify()) // Minify JS (opt.)
-		.pipe(sourcemaps.write())
+		// .pipe(sourcemaps.write())
 		.pipe(gulp.dest(path.dist.assets + "/js"))
 		.pipe(browserSync.stream())
 }
@@ -179,7 +183,7 @@ function scriptsBild() {
 
 
 function nunjucks() {
-	return gulp.src(path.src.njk + '*.html')
+	return gulp.src(path.src.njk + '**/*.html')
 		.pipe(nunjucksRender({
 			path: path.src.njk
 		}))
@@ -210,6 +214,12 @@ function copyAssets() {
 		// }))
 		.pipe(gulp.dest(path.dist.assets))
 		.pipe(browserSync.stream());
+}
+
+function imagesWebp() {
+	return gulp.src(path.src.images)
+		.pipe(webp())
+		.pipe(gulp.dest(path.src.assets + 'images'));
 }
 
 function watch() {
@@ -264,10 +274,12 @@ gulp.task('clear', clear);
 gulp.task('cleanimg', cleanimg);
 gulp.task('grid', grid);
 gulp.task('nunjucks', nunjucks);
+gulp.task('webp', imagesWebp);
 
 // gulp.task('scripts', gulp.series('copyHtml', 'copyAssets', 'styles', 'scripts', 'watch'));
 gulp.task('scripts', gulp.series('nunjucks', 'copyAssets', 'styles', 'scripts', 'watch'));
 gulp.task('default', gulp.series('nunjucks', 'copyAssets', 'styles', 'scriptLight', 'watch'));
+gulp.task('builDebug', gulp.series('nunjucks', 'copyAssets', 'stylesBild', 'scriptLight', 'watch'));
 gulp.task("buildHard", gulp.parallel("stylesBild", "scriptsBild"));
 gulp.task("buildLight", gulp.parallel("stylesBild", "scriptLight"));
 

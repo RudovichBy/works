@@ -182,15 +182,16 @@ window.addEventListener('DOMContentLoaded', () => {
 		const mapTitle = document.createElement('div');
 		mapTitle.className = 'mapTitle';
 		// вписываем нужный нам текст внутрь элемента
-		mapTitle.textContent = 'Для активации карты нажмите на неё';
+		mapTitle.textContent = 'Нажмите для активации карты';
 		// добавляем элемент с подсказкой последним элементов внутрь нашего <div> с id wrapMap
 		wrapMap.appendChild(mapTitle);
 		// по клику на карту
 		wrapMap.onclick = function () {
-			// убираем атрибут "style", в котором прописано свойство "pointer-events"
-			this.children[0].removeAttribute('style');
 			// удаляем элемент с интерактивной подсказкой
 			mapTitle.parentElement.removeChild(mapTitle);
+			wrapMap.innerHTML = `<iframe
+			src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae950ffe5a535ea38ffecb82f23636086f4499561e24d5d0275f5c1b56b6f8bfe&amp;source=constructor"
+			style="width:100%; height: 100%; border: none;" loading="lazy"></iframe>`
 		}
 		// по движению мыши в области карты
 		wrapMap.onmousemove = function (event) {
@@ -276,8 +277,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		bindModal('.scrap__btn', '.popup', '.popup .popup__close');
 		bindModal('.shop__btn', '.popup-2', '.popup-2 .popup__close');
 	};
-
-
 	modals();
 
 

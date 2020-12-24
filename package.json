@@ -32,6 +32,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify-es": "^2.0.0",
+    "gulp-webp": "^4.0.1",
     "smart-grid": "^2.1.2",
     "webpack": "^4.43.0",
     "webpack-stream": "^5.2.1"
