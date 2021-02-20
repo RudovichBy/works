@@ -11,7 +11,9 @@ module.exports = {
 
     mobileFirst: true,
     container: {
-        maxWidth: "1400px", // настройки внешнего контейнера
+       // maxWidth: "1600px", // настройки внешнего контейнера
+        maxWidth: "1400px", // radiobazar
+        //maxWidth: "1170px", // настройки внешнего контейнера
         //fields: "1%" //внутренние отступы контейнера Внимание! fields обязан быть >= offset / 2
         fields: "15px" //внутренние отступы контейнера Внимание! fields обязан быть >= offset / 2
     },
@@ -20,7 +22,8 @@ module.exports = {
             width: "1400px",
         },
         xl: {
-            width: "1200px",
+            width: "1200px", // radiobazar
+            // width: "1170px",
         },
         lg: {
             width: "992px"

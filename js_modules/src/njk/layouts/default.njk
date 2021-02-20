@@ -1,0 +1,73 @@
+{# Доп. переменные #}
+{% if not(title) %}
+{% set title = "Главная" %}
+{% endif %}
+{% if not(description) %}
+{% set description = "Краткое описание" %}
+{% endif %}
+{% if not(keywords) %}
+{% set keywords = "Ключивые слова" %}
+{% endif %}
+{% if not(canonical) %}
+{% set canonical = "https://радиобазар.бел/" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>{{ title }}</title>
+	<meta name="description" content="{{ description }}">
+	<meta name="keywords" content="{{ keywords }}">
+	<meta name=" subject" content="{{ title }}">
+	<meta name="geo.placename" content="Беларусь, Минск">
+	<meta name="geo.region" content="RU-Минск">
+	<meta name="author" content="https://Loosemaster.ru">
+	<meta name="copyright" content="https://Loosemaster.ru">
+	<meta name="robots" content="index, follow">
+	<meta name="googlebot" content="index, follow">
+	<meta name="google" content="nositelinkssearchbox">
+	<meta name="google" content="notranslate">
+	<meta name="document-state" content="dynamic">
+	<link rel="canonical" href="{{ canonical }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+	<link rel="icon" type="image/png" href="assets/images/favicon/favicon.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+
+
+{# Блок контент #}
+{% block content %}
+
+{% endblock %}
+
+	<!-- <script>
+		function loadStyle(url){
+		   let link = document.createElement('link');
+		   link.href = url;
+		   link.rel = 'stylesheet';
+		   document.body.appendChild(link);
+		}
+		loadStyle('assets/css/styles.css?v=1.3');
+	 </script> -->
+	<!-- Полифил, позволяющий обеспечивать базовые стили HTML5 для Internet Explorer 6-8, Safari 4.x, Firefox 3.x. и iPhone 3.x.  -->
+	<!--[if lt IE 9]>
+	<script src="/assets/libs/html5shiv/es5-shim.min.js"></script>
+	<script src="/assets/libs/html5shiv/html5shiv.min.js"></script>
+	<script src="/assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="/assets/libs/html5shiv/respond.min.js"></script>
+    <![endif]-->
+	<script src="assets/js/script.js"></script>
+</body>
+
+</html>
