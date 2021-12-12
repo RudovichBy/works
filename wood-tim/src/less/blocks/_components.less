@@ -1,0 +1,281 @@
+.row__link {
+	.col();
+	.size(12);
+	text-align: center;
+
+	a {
+		// font-family: @font-sf-bold;
+		color: @accent-color-2;
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-size: 20px;
+		margin: 20px 0 30px 0;
+		display: inline-block;
+		transition: @transition;
+
+		&:hover {
+			color: @accent-color;
+		}
+	}
+}
+
+.title__custom {
+	font-size: 32px;
+	font-weight: 800;
+	// font-family: @font-sf-bold;
+	position: relative;
+	line-height: 45px;
+	display: inline-block;
+	.md(font-size, 46px);
+
+	.lg-block( {
+			font-size: 42px;
+			line-height: 60px;
+		}
+
+	);
+
+	&::after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		bottom: -10px;
+		width: 20%;
+		height: 5px;
+		border-radius: 15px;
+		background: linear-gradient(to right, #2052c9, #21a5dd);
+	}
+}
+
+// =================прогрес-бар=================
+.progress-container {
+	width: 100%;
+	height: 3px;
+}
+
+
+.progress-bar {
+	height: 3px;
+	background: linear-gradient(to right, #2052c9, #21a5dd);
+	width: 0%;
+}
+
+//==============================================
+
+
+// ===================оснавная кнопка===================
+.btn {
+	.button-reset;
+	background-color: inherit;
+	cursor: pointer;
+	margin-top: 20px;
+	text-decoration: none;
+	font-weight: 500;
+	position: relative;
+	color: @accent-color;
+	display: inline-block;
+	padding: 10px 25px;
+	border: 2px solid @accent-color;
+	transition: all 300ms ease;
+	box-shadow: 0px 4px 10px 2px rgba(black, 0.2);
+	z-index: 5;
+
+	&:before {
+		position: absolute;
+		content: '';
+		width: 0%;
+		height: 100%;
+		background: @accent-color;
+		top: 0;
+		left: auto;
+		right: 0;
+		z-index: -1;
+		transition: all 300ms ease;
+	}
+
+	&:hover {
+		color: white;
+		box-shadow: none;
+
+		&:before {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: @accent-color;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: -1;
+		}
+	}
+}
+
+//======================================================
+
+
+//=============эффект при на ведении на блок новости=============
+.pattern {
+	background-color: @darck-color;
+	position: relative;
+	display: block;
+
+	&::before {
+		content: '';
+		transition: opacity 0.25s ease, top 0.25s ease, left 0.25s ease, bottom 0.25s ease, right 0.25s ease;
+		z-index: 1;
+		position: absolute;
+		border: #ffffff solid 1px;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 0.4;
+			top: 10px;
+			bottom: 10px;
+			left: 10px;
+			right: 10px;
+		}
+
+		// .overlay {
+		// 	&::before {
+		// 		opacity: 0.75;
+		// 	}
+		// }
+
+		// & .item__title__content h3 a {
+		// 	text-decoration: underline;
+		// }
+	}
+
+	// &__cat__header {
+	// 	&::before {
+	// 		display: none;
+	// 	}
+	// }
+}
+
+//=============================================================
+
+//==========================кнопка в вверх==========================
+.pageup {
+	opacity: 0;
+	width: 43px;
+	height: 43px;
+	position: fixed;
+	bottom: 50px;
+	right: 5%;
+	z-index: 30;
+	cursor: pointer;
+	transition: 1s all;
+	fill: @accent-color;
+}
+
+//=======================================================================
+
+.icon__svg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	svg {
+		width: 30px;
+		fill: #ffffff;
+	}
+}
+
+// .overlay {
+// 	background-size: cover;
+// 	background-position: center;
+// 	position: relative;
+// 	display: block;
+
+// 	&::before {
+// 		content: '';
+// 		background-color: @darck-color;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		opacity: 0.45;
+// 		transition: opacity 0.25s ease;
+// 	}
+
+// 	&:hover {
+// 		&::before {
+// 			opacity: 0.75;
+// 		}
+// 	}
+// }
+
+
+// .btn {
+// 	.button-reset;
+// 	display: inline-block;
+// 	background-color: inherit;
+// 	border: 2px solid @accent-color;
+// 	transition: all 300ms ease;
+// 	box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
+// 	position: relative;
+// 	min-width: 200px;
+// 	min-height: 50px;
+// 	color: @accent-color;
+// 	margin-top: 20px;
+// 	text-align: center;
+// 	cursor: pointer;
+
+// 	span {
+// 		position: absolute;
+// 		width: 100%;
+// 		top: 50%;
+// 		left: 0;
+// 		right: 0;
+// 		transform: translateY(-50%);
+// 	}
+
+// 	&:before {
+// 		position: absolute;
+// 		content: "";
+// 		width: 0%;
+// 		height: 100%;
+// 		background: @accent-color;
+// 		top: 0;
+// 		left: auto;
+// 		right: 0;
+// 		transition: all 300ms ease;
+// 	}
+
+// 	&:hover {
+// 		color: #ffffff;
+// 		box-shadow: none;
+// 	}
+
+// 	&:hover::before {
+// 		position: absolute;
+// 		content: "";
+// 		width: 100%;
+// 		height: 100%;
+// 		background: @accent-color;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 	}
+
+// 	&:active::before {
+// 		position: absolute;
+// 		content: "";
+// 		width: 100%;
+// 		height: 100%;
+// 		background: @accent-color;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 	}
+// }

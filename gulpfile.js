@@ -31,7 +31,7 @@ let imageswatch = 'jpg,jpeg,png,webp,svg';
 //  {main,additional}.scss — выбрать только перечисленные файлы в этой папке;
 
 // const folderProd = './Paradigma/';
-const folderProd = './radiobazaar/';
+const folderProd = './wood-tim/';
 let path = {
 	dist: {
 		folder: folderProd + 'dist/',

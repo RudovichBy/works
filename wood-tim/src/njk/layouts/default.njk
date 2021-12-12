@@ -1,0 +1,57 @@
+{# Доп. переменные #}
+{% if not(title) %}
+{% set title = "Главная" %}
+{% endif %}
+{% if not(description) %}
+{% set description = "Краткое описание" %}
+{% endif %}
+{% if not(keywords) %}
+{% set keywords = "Ключивые слова" %}
+{% endif %}
+{% if not(canonical) %}
+{% set canonical = "***.**" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>{{ title }}</title>
+	<meta name="description" content="{{ description }}">
+	<meta name="keywords" content="{{ keywords }}">
+	<meta name=" subject" content="{{ title }}">
+	<meta name="geo.placename" content="Беларусь, Минск">
+	<meta name="geo.region" content="RU-Минск">
+	<meta name="author" content="https://Loosemaster.ru">
+	<meta name="copyright" content="https://Loosemaster.ru">
+	<meta name="robots" content="index, follow">
+	<meta name="googlebot" content="index, follow">
+	<meta name="google" content="nositelinkssearchbox">
+	<meta name="google" content="notranslate">
+	<meta name="document-state" content="dynamic">
+	<link rel="canonical" href="{{ canonical }}">
+	<!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png"> -->
+	<!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png"> -->
+	<!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png"> -->
+	<!-- <link rel="icon" type="image/png" href="assets/images/favicon/favicon.png"> -->
+	<link rel="manifest" href="site.webmanifest">
+	<!-- <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5"> -->
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+
+{# Блок контент #}
+{% block content %}
+
+{% endblock %}
+	<script src="assets/js/script.js"></script>
+</body>
+
+</html>
