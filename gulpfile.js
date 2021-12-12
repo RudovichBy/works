@@ -1,7 +1,3 @@
-// const sass = require('gulp-sass');
-// const scss = require('gulp-sass');
-// const styl = require('gulp-stylus');
-
 const 	gulp = require('gulp'),
 		autoprefixer = require('gulp-autoprefixer'),
 		del = require('del'), // Для удоление папок и файлов
@@ -34,36 +30,25 @@ let imageswatch = 'jpg,jpeg,png,webp,svg';
 //  [^_]*.scss — выбрать все файлы кроме файлов с указанным расширение в этой м;
 //  {main,additional}.scss — выбрать только перечисленные файлы в этой папке;
 
-const folderProd = './trucksrepair/';
-// const folderProd = './fiztech/';
+// const folderProd = './Paradigma/';
+const folderProd = './radiobazaar/';
 let path = {
 	dist: {
 		folder: folderProd + 'dist/',
-		js: folderProd + 'dist/assets/js/',
 		css: folderProd + 'dist/assets/css/',
-		img: folderProd + 'dist/assets/images/',
-		fonts: folderProd + 'dist/assets/fonts/',
-		fonts: folderProd + 'dist/assets/libs/',
 		assets: folderProd + 'dist/assets/',
-		images: folderProd + 'src/assets/images/**/',
 	},
 	src: {
 		folder: folderProd + 'src/',
-		html: folderProd + 'src/**/*.html',
 		js: folderProd + 'src/js/main.js',
-		css: folderProd + 'src/assets/*.css',
 		less: folderProd + 'src/less/',
 		images: folderProd + 'src/assets/images/**/*.{jpg,jpeg,png,webp,svg}',
-		fonts: folderProd + 'src/fonts/**/*.*',
 		assets: folderProd + 'src/assets/',
 		njk: folderProd + 'src/njk/',
 	},
 	watch: {
-		html: folderProd + 'src/**/*.html',
 		js: folderProd + 'src/js/**/*.js',
 		less: folderProd + 'src/less/**/*.less',
-		img: folderProd + 'src/imgages/**/*.*',
-		fonts: folderProd + 'src/fonts/**/*.*',
 		assets: folderProd + 'src/assets/**/*.*',
 		njk: folderProd + 'src/njk/**/*.*',
 	},
@@ -192,16 +177,6 @@ function nunjucks() {
 		.pipe(browserSync.stream());
 }
 
-
-function copyHtml() {
-	return gulp.src(path.src.html)
-		.pipe(changed(path.dist.folder, {
-			hasChanged: changed.compareContents
-		}))
-		.pipe(gulp.dest(path.dist.folder))
-		.pipe(browserSync.stream());
-}
-
 function copyAssets() {
 	return gulp.src(path.src.assets + '**/**/*.*')
 		.pipe(changed(path.dist.assets, {
@@ -228,7 +203,7 @@ function watch() {
 	gulp.watch(path.watch.less, styles);
 	gulp.watch(path.watch.njk, nunjucks);
 	gulp.watch(path.watch.assets, copyAssets);
-	// gulp.watch(path.watch.js, scriptLight); // Для простой сборки без Babel
+	gulp.watch(path.watch.js, scriptLight); // Для простой сборки без Babel
 	gulp.watch(path.watch.js, scripts);
 	gulp.watch([path.dist.folder + '**/*.{' + fileswatch + '}']).on('change', browserSync.reload);
 	gulp.watch('./smartgrid.js', grid);
@@ -236,17 +211,13 @@ function watch() {
 
 function grid(done) {
 	delete require.cache[require.resolve('./smartgrid.js')];
-
 	let settings = require('./smartgrid.js');
 	smartgrid(path.src.less + 'smartgrid', settings);
-
 	//settings.offset = '3.1%'; //меняем настройки  offset на % для кросбраузерной верстки, наслучай если боаузер не понимает фукцию calc в css(ie6-8)
 	//settings.filename = 'smart-grid-per';
 	//smartgrid(path.src.less + 'smartgrid', settings);
 	done();
 }
-
-
 
 function clear() {
 	return del(path.clean);
@@ -256,41 +227,33 @@ function clearimg() {
 	return del(path.dist.img);
 }
 
-gulp.task('watch', watch);
-gulp.task('scriptLight', scriptLight);
-gulp.task('scripts', scripts);
-gulp.task('scriptsBild', scriptsBild);
-gulp.task('styles', styles);
-gulp.task('stylesBild', stylesBild);
-gulp.task('copyAssets', copyAssets);
-gulp.task('clear', clear);
-gulp.task('clearimg', clearimg);
-gulp.task('grid', grid);
-gulp.task('nunjucks', nunjucks);
-gulp.task('webp', imagesWebp);
+const { parallel, series } = require('gulp');
 
-
-// gulp.task('default', gulp.series('nunjucks', 'copyAssets', 'styles', 'scriptLight', 'watch'));
-gulp.task('default', gulp.series('nunjucks', 'copyAssets', 'styles', 'scripts', 'watch'));
-// gulp.task('builDebug', gulp.series('nunjucks', 'copyAssets', 'stylesBild', 'scriptLight', 'watch'));
-gulp.task("buildHard", gulp.parallel("stylesBild", "scriptsBild"));
-gulp.task("buildLight", gulp.parallel("stylesBild", "scriptLight"));
+exports.clearimg = clearimg;
+exports.webp = imagesWebp;
+exports.grid = grid;
+exports.cleardist = clear;
+exports.build = series(stylesBild, scriptsBild);
+exports.default = series(nunjucks, copyAssets, styles, scripts, parallel(watch));
+exports.oldtask = series(nunjucks, copyAssets, styles, scriptLight, parallel(watch));
 
 
 
-/* Проверить поддерживает браузер функцию calc css или нет, если нет то подключаем другой файл со стилями 
-	данный скрипт подключить в html */
+// gulp.task('watch', watch);
+// gulp.task('scriptLight', scriptLight);
+// gulp.task('scripts', scripts);
+// gulp.task('scriptsBild', scriptsBild);
+// gulp.task('styles', styles);
+// gulp.task('stylesBild', stylesBild);
+// gulp.task('copyAssets', copyAssets);
+// gulp.task('clear', clear);
+// gulp.task('clearimg', clearimg);
+// gulp.task('grid', grid);
+// gulp.task('nunjucks', nunjucks);
+// gulp.task('webp', imagesWebp);
 
-/*     <script>
-        var div = document.createElement('div');
-        div.style.cssText = 'width:calc(10px)';
 
-        if(!(div.style.length > 0)){
-            var link = document.createElement('link');
-            link.setAttribute('href', 'assets/css/styles-calc.css')
-            link.setAttribute('rel', 'stylesheet')
-            document.body.appendChild(link);
-        }
-    </script> */
-
-//=============================
+// gulp.task('oldtask', gulp.series('nunjucks', 'copyAssets', 'styles', 'scriptLight', 'watch'));
+// gulp.task('default', gulp.series('nunjucks', 'copyAssets', 'styles', 'scripts', 'watch'));
+// gulp.task("build", gulp.parallel("stylesBild", "scriptsBild"));
+// gulp.task("buildLight", gulp.parallel("stylesBild", "scriptLight"));

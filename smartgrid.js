@@ -30,19 +30,19 @@ module.exports = {
         },
         md: {
             width: "768px",
-            // offset: "30px",
-            // fields: "15px",
+            offset: "30px",
+            fields: "15px",
         },
         sm: {
             width: "576px",
-            // offset: "20px",
-            // fields: "10px",
+            offset: "20px",
+            fields: "10px",
         },
-        // xs: {
-        //     width: "320px",
-        //     // offset: "10px",
-        //     // fields: "5px"
-        // }
+        xs: {
+            width: "320px",
+            offset: "10px",
+            fields: "5px"
+        }
     },
     // mixinNames: {
     //     container: "wrapper",

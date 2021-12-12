@@ -1,6 +1,6 @@
 .header {
-	min-height: 780px;
-	height: 100%;
+	// min-height: 780px;
+	// height: 100%;
 
 	&__other {
 
@@ -23,7 +23,7 @@
 		left: 0;
 		right: 0;
 		z-index: 99;
-		background-color: rgba(0, 0, 0, .6);
+		// background-color: rgba(0, 0, 0, .6);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	}
 
@@ -31,7 +31,7 @@
 		.col();
 		.size(12);
 		display: none;
-		margin-top: 5px;
+		margin-top: 10px;
 		flex-wrap: wrap;
 		justify-content: center;
 		font-size: 14px;
@@ -90,14 +90,19 @@
 	top: 0;
 	width: 100%;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
-	background-color: rgba(0, 0, 0, .8) !important;
+	background-color: rgba(0, 0, 0, .65) !important;
 	border-bottom: none;
 
 	.lg-block( {
-			top: -62px;
+			top: -55px;
+
+			.logo__wrap {
+				display: none;
+			}
 		}
 
 	);
+
 }
 
 .mobile__menu {
@@ -108,20 +113,29 @@
 	align-items: center;
 	min-height: 50px;
 	position: relative;
+	.lg(justify-content, center);
+	.xl(justify-content, flex-end);
 }
 
 .logo__wrap {
 	max-width: 300px;
 	position: absolute;
 	left: 0;
-	.lg(top, -50%);
+	.lg-block({
+		display: none;
+	});
+	.xl-block({
+		display: block;
+		top: -50%;
+	});
+	// .lg(top, -50%);
 	// .xl(top, -50%);
 
 	a {
 		display: flex;
 		flex-wrap: nowrap;
 		// max-width: 300px;
-		align-items: flex-start;
+		align-items: center;
 		color: #fff;
 		font-size: 18px;
 		font-weight: 400;
@@ -129,10 +143,11 @@
 		.xl(font-size, 30px);
 
 		img {
-			width: 20px;
+			width: 35px;
 			height: auto;
 			margin-right: 5px;
-			.xl(width, 30px);
+			.lg(width, 30px);
+			.xl(width, 40px);
 		}
 
 		p {
@@ -153,193 +168,193 @@
 }
 
 
-.swiper {
-	&__header {
-		&.swiper-container {
-			width: 100%;
-			min-height: 100%;
-			height: 100%;
-			margin-left: auto;
-			margin-right: auto;
-		}
+// .swiper {
+// 	&__header {
+// 		&.swiper-container {
+// 			width: 100%;
+// 			min-height: 100%;
+// 			height: 100%;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 		}
 
-		&__slide {
-			&.swiper-slide {
-				text-align: center;
-				font-size: 18px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-				position: relative;
-				.sm(padding-top, 85px);
+// 		&__slide {
+// 			&.swiper-slide {
+// 				text-align: center;
+// 				font-size: 18px;
+// 				display: flex;
+// 				justify-content: center;
+// 				align-items: center;
+// 				background-size: cover;
+// 				background-position: center;
+// 				background-repeat: no-repeat;
+// 				position: relative;
+// 				.sm(padding-top, 85px);
 
-				.lg-block( {
-						padding-top: 120px;
-					}
+// 				.lg-block( {
+// 						padding-top: 120px;
+// 					}
 
-				);
+// 				);
 
-				& .wrapper {
-					z-index: 1;
-				}
+// 				& .wrapper {
+// 					z-index: 1;
+// 				}
 
-				&::before {
-					content: '';
-					// background-image: linear-gradient(rgba(#000000, 0.65));
-					position: absolute;
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-				}
-			}
-		}
+// 				&::before {
+// 					content: '';
+// 					// background-image: linear-gradient(rgba(#000000, 0.65));
+// 					position: absolute;
+// 					top: 0;
+// 					left: 0;
+// 					right: 0;
+// 					bottom: 0;
+// 				}
+// 			}
+// 		}
 
-		& .swiper-pagination {
-			& .swiper-pagination-bullet {
-				width: 15px;
-				height: 15px;
-				background: #a6a6a6;
-				opacity: 0.8;
-			}
+// 		& .swiper-pagination {
+// 			& .swiper-pagination-bullet {
+// 				width: 15px;
+// 				height: 15px;
+// 				background: #a6a6a6;
+// 				opacity: 0.8;
+// 			}
 
-			& .swiper-pagination-bullet-active {
-				background-color: @accent-color;
-			}
-		}
-	}
+// 			& .swiper-pagination-bullet-active {
+// 				background-color: @accent-color;
+// 			}
+// 		}
+// 	}
 
-}
-
-
-
-.swiper-button-prev,
-.swiper-button-next {
-	visibility: hidden;
-	.md(visibility, visible);
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-	color: @accent-color;
-}
-
-.header__swiper__items {
-	.col();
-	.size(12);
-	.size-md(11);
-	.size-lg(10);
-	text-align: center;
+// }
 
 
-	h2 {
-		font-weight: 600;
-		font-size: 22px;
-		border-color: rgb(51, 51, 51);
+
+// .swiper-button-prev,
+// .swiper-button-next {
+// 	visibility: hidden;
+// 	.md(visibility, visible);
+// }
+
+// .swiper-button-prev::after,
+// .swiper-button-next::after {
+// 	color: @accent-color;
+// }
+
+// .header__swiper__items {
+// 	.col();
+// 	.size(12);
+// 	.size-md(11);
+// 	.size-lg(10);
+// 	text-align: center;
 
 
-		span {
-			color: @accent-color;
-		}
+// 	h2 {
+// 		font-weight: 600;
+// 		font-size: 22px;
+// 		border-color: rgb(51, 51, 51);
 
-		.sm(font-size, 36px);
 
-		.lg-block( {
-				line-height: 50px;
-				font-size: 42px;
-			}
+// 		span {
+// 			color: @accent-color;
+// 		}
 
-		);
+// 		.sm(font-size, 36px);
 
-		.xl-block( {
-				font-size: 46px;
-			}
+// 		.lg-block( {
+// 				line-height: 50px;
+// 				font-size: 42px;
+// 			}
 
-		);
-	}
+// 		);
 
-	p {
-		font-size: 16px;
-		.md(font-size, 20px);
-		.lg(font-size, 21px);
-	}
-}
+// 		.xl-block( {
+// 				font-size: 46px;
+// 			}
 
-.swiper-slide-1 {
-	color: #fff;
-	background-image: url('../images/background/Galaxy-S10-min-2.jpg');
-	.md(background-image, url('../images/background/Galaxy-S10-SD-2.jpg'));
-	.xl(background-image, url('../images/background/Galaxy-S10-HD-2.jpg'));
-	// .xxl(background-image, url('../images/background/Galaxy-S10-HD-1.jpg'));
-	background-repeat: no-repeat;
+// 		);
+// 	}
 
-	h2 {
-		text-shadow: 1px 1px 2px black;
-	}
+// 	p {
+// 		font-size: 16px;
+// 		.md(font-size, 20px);
+// 		.lg(font-size, 21px);
+// 	}
+// }
 
-	&::before {
-		content: '';
-		background-color: rgba(0, 0, 0, .65);
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
-}
+// .swiper-slide-1 {
+// 	color: #fff;
+// 	// background-image: url('../images/background/Galaxy-S10-min-2.jpg');
+// 	// .md(background-image, url('../images/background/Galaxy-S10-SD-2.jpg'));
+// 	// .xl(background-image, url('../images/background/Galaxy-S10-HD-2.jpg'));
+// 	// .xxl(background-image, url('../images/background/Galaxy-S10-HD-1.jpg'));
+// 	background-repeat: no-repeat;
 
-.swiper-slide-2 {
-	color: #000000;
+// 	h2 {
+// 		text-shadow: 1px 1px 2px black;
+// 	}
 
-	h2 {
-		font-size: 22px;
+// 	&::before {
+// 		content: '';
+// 		background-color: rgba(0, 0, 0, .65);
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 	}
+// }
 
-		.sm-block( {
-				font-size: 32px;
-				line-height: 35px;
-			}
+// .swiper-slide-2 {
+// 	color: #000000;
 
-		);
+// 	h2 {
+// 		font-size: 22px;
 
-		.lg-block( {
-				font-size: 34px;
-				line-height: 40px;
-			}
+// 		.sm-block( {
+// 				font-size: 32px;
+// 				line-height: 35px;
+// 			}
 
-		);
+// 		);
 
-		.xl-block( {
-				line-height: 50px;
-				font-size: 46px;
-			}
+// 		.lg-block( {
+// 				font-size: 34px;
+// 				line-height: 40px;
+// 			}
 
-		);
-	}
+// 		);
 
-	& .header__swiper__items {
-		.row-flex();
-		justify-content: center;
-		text-align: left;
+// 		.xl-block( {
+// 				line-height: 50px;
+// 				font-size: 46px;
+// 			}
 
-		&--1 {
-			.col();
-			.size(12);
-			.size-md(7);
-			// padding-top: 20px;
-		}
+// 		);
+// 	}
 
-		&--2 {
-			.col();
-			.size(8);
-			.size-md(5);
-			align-self: center;
+// 	& .header__swiper__items {
+// 		.row-flex();
+// 		justify-content: center;
+// 		text-align: left;
 
-			img {
-				width: 100%;
-			}
-		}
-	}
-}
+// 		&--1 {
+// 			.col();
+// 			.size(12);
+// 			.size-md(7);
+// 			// padding-top: 20px;
+// 		}
+
+// 		&--2 {
+// 			.col();
+// 			.size(8);
+// 			.size-md(5);
+// 			align-self: center;
+
+// 			img {
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+// }
