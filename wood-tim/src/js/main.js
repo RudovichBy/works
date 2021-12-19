@@ -3,8 +3,8 @@ import burgerMenu from './modules/burgerMenu';
 
 window.addEventListener('DOMContentLoaded', () => {
 	"use strict";
-console.log('test')
+	
 	scrollingicator();
-	burgerMenu('.mobile__menu', '.burger-menu__button', '.nav__item', '.burger-menu__overlay');
+	burgerMenu('.mobile_menu', '.burger-menu_button', '.nav_item', '.burger-menu_overlay');
 
 });

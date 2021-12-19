@@ -61,11 +61,7 @@ function styles() {
 		.pipe(sourcemaps.init())
 		.pipe(eval(preproc.less)())
 		.pipe(gcmq())
-		.pipe(autoprefixer({
-			grid: true,
-			overrideBrowserslist: ['> 0.1%'],
-			cascade: false
-		}))
+		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(path.dist.css))
 		.pipe(browserSync.stream());
@@ -203,7 +199,7 @@ function watch() {
 	gulp.watch(path.watch.less, styles);
 	gulp.watch(path.watch.njk, nunjucks);
 	gulp.watch(path.watch.assets, copyAssets);
-	gulp.watch(path.watch.js, scriptLight); // Для простой сборки без Babel
+	//gulp.watch(path.watch.js, scriptLight); // Для простой сборки без Babel
 	gulp.watch(path.watch.js, scripts);
 	gulp.watch([path.dist.folder + '**/*.{' + fileswatch + '}']).on('change', browserSync.reload);
 	gulp.watch('./smartgrid.js', grid);
@@ -236,24 +232,3 @@ exports.cleardist = clear;
 exports.build = series(stylesBild, scriptsBild);
 exports.default = series(nunjucks, copyAssets, styles, scripts, parallel(watch));
 exports.oldtask = series(nunjucks, copyAssets, styles, scriptLight, parallel(watch));
-
-
-
-// gulp.task('watch', watch);
-// gulp.task('scriptLight', scriptLight);
-// gulp.task('scripts', scripts);
-// gulp.task('scriptsBild', scriptsBild);
-// gulp.task('styles', styles);
-// gulp.task('stylesBild', stylesBild);
-// gulp.task('copyAssets', copyAssets);
-// gulp.task('clear', clear);
-// gulp.task('clearimg', clearimg);
-// gulp.task('grid', grid);
-// gulp.task('nunjucks', nunjucks);
-// gulp.task('webp', imagesWebp);
-
-
-// gulp.task('oldtask', gulp.series('nunjucks', 'copyAssets', 'styles', 'scriptLight', 'watch'));
-// gulp.task('default', gulp.series('nunjucks', 'copyAssets', 'styles', 'scripts', 'watch'));
-// gulp.task("build", gulp.parallel("stylesBild", "scriptsBild"));
-// gulp.task("buildLight", gulp.parallel("stylesBild", "scriptLight"));

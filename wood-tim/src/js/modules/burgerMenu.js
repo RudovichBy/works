@@ -24,9 +24,22 @@ const burgerMenu = (menu, openBtn, linksNav, overlay_nav) => {
 
     function toggleMenu() {
         mobileMenu.classList.toggle('burger-menu_active');
-        // overlay.classList.toggle('burger-menu__overlay-active');
+        // overlay.classList.toggle('burger-menu_overlay-active');
     }
 
 };
+{
+    // window.onscroll = function () {
+    // 	myFunction()
+    // };
+    let navbar = document.getElementById("navbar");
+    window.addEventListener('scroll', () => {
 
+        if (document.documentElement.scrollTop > 0) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    });
+}
 export default burgerMenu;
