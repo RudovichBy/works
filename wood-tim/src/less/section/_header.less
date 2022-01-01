@@ -1,6 +1,6 @@
 .header_area {
 	width: 100%;
-	background-color: #342e2e;
+	background-color: @bg-color;
 	text-transform: uppercase;
 }
 
@@ -23,11 +23,15 @@
 	}
 }
 
+.header_area_column-right,
+.header_area_column-left {
+	padding: 10px 0;
+}
+
 .header_area_column-left {
 	.col();
 	.size(12);
 	.size-lg(8);
-	padding: 14px 0;
 	font-size: 14px;
 	text-align: left;
 }
@@ -87,7 +91,7 @@
 	.col();
 	.size(12);
 	.size-lg(4);
-	padding: 14px 0;
+	// padding: 5px 0;
 }
 
 .headre_area_sicial {
@@ -113,7 +117,7 @@
 }
 
 .header_nav {
-	position: absolute;
+	position: relative;
 	background-color: #ffffff;
 	left: 0;
 	right: 0;

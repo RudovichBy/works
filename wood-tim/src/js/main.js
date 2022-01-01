@@ -1,10 +1,19 @@
 import scrollingicator from './modules/scrollingicator';
 import burgerMenu from './modules/burgerMenu';
+// import sliderSwiper from './modules/slider';
 
 window.addEventListener('DOMContentLoaded', () => {
 	"use strict";
 	
 	scrollingicator();
-	burgerMenu('.mobile_menu', '.burger-menu_button', '.nav_item', '.burger-menu_overlay');
-
+    burgerMenu('.mobile_menu', '.burger-menu_button', '.nav_item', '.burger-menu_overlay');
+    
+	let mySwiper = new Swiper('.swiper', {
+        loop: true,
+        speed: 800,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    })
 });
