@@ -1,0 +1,111 @@
+.advantage {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0px 5px -5px -5px rgba(34, 60, 80, 0.6) inset;
+    padding: 50px 0 50px;
+}
+
+.advantage_title {
+    .col();
+    .size(12);
+    text-align: center;
+    text-transform: uppercase;
+
+    h2 {
+        margin: 0;
+        margin-bottom: 50px;
+        font-size: 24px;
+
+        .md-block( {
+                font-size: 26px;
+                margin-bottom: 100px;
+            }
+
+        );
+    }
+}
+
+.advantage_col {
+    .col();
+    .size(11);
+    .size-sm(8);
+    .size-md(4);
+    margin-bottom: 30px;
+}
+
+.advantage_wrap {
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    .md-block( {
+            border-bottom: none;
+            padding-bottom: 0;
+            border-right: 1px solid #e3e3e3;
+            padding-right: 30px;
+        }
+
+    );
+}
+
+div~ :last-child .advantage_wrap {
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.advantage_icon {
+    display: flex;
+    justify-content: center;
+
+}
+
+.advantage_icon_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    background-color: @accent-color;
+    // border: 1px solid @accent-color;
+    border-radius: 100%;
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+
+    svg {
+        width: 54px;
+        fill: #fff;
+    }
+}
+
+.advantage_content {
+    text-align: center;
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin: 0;
+        line-height: 1.7;
+        font-weight: 400;
+        color: #7d8f99;
+    }
+}
+
+.advantage_wrap:hover .advantage_icon svg,
+.advantage_wrap:hover .advantage_content h2 {
+    fill: @accent-color;
+    color: @accent-color;
+    transition: @transition;
+}
+
+.advantage_wrap:hover .advantage_icon_box {
+    background-color: #fff;
+    transition: @transition;
+}

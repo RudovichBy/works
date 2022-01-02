@@ -613,7 +613,6 @@
 
 .swiper-container {
     min-width: 100%;
-    // height: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -621,9 +620,12 @@
 .swiper-button-prev,
 .swiper-button-next {
     visibility: hidden;
-    .md(visibility, visible);
+    transition: @transition;
 }
-
+.swiper-container:hover .swiper-button-prev,
+.swiper-container:hover .swiper-button-next{
+  .lg(visibility, visible);
+}
 .swiper-button-prev::after,
 .swiper-button-next::after {
     color: @accent-color;
