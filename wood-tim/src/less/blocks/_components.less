@@ -1,53 +1,3 @@
-.row_link {
-	.col();
-	.size(12);
-	text-align: center;
-
-	a {
-		// font-family: @font-sf-bold;
-		color: @accent-color-2;
-		text-transform: uppercase;
-		text-decoration: underline;
-		font-size: 20px;
-		margin: 20px 0 30px 0;
-		display: inline-block;
-		transition: @transition;
-
-		&:hover {
-			color: @accent-color;
-		}
-	}
-}
-
-.title_custom {
-	font-size: 32px;
-	font-weight: 800;
-	// font-family: @font-sf-bold;
-	position: relative;
-	line-height: 45px;
-	display: inline-block;
-	.md(font-size, 46px);
-
-	.lg-block( {
-			font-size: 42px;
-			line-height: 60px;
-		}
-
-	);
-
-	&::after {
-		content: "";
-		display: inline-block;
-		position: absolute;
-		left: 0;
-		bottom: -10px;
-		width: 20%;
-		height: 5px;
-		border-radius: 15px;
-		background: linear-gradient(to right, #2052c9, #21a5dd);
-	}
-}
-
 // =================прогрес-бар=================
 .progress-container {
 	width: 100%;
@@ -63,9 +13,23 @@
 
 //==============================================
 
+//==========================кнопка в вверх==========================
+.pageup {
+	opacity: 0;
+	width: 43px;
+	height: 43px;
+	position: fixed;
+	bottom: 50px;
+	right: 5%;
+	z-index: 30;
+	cursor: pointer;
+	transition: 1s all;
+	fill: @accent-color;
+}
 
+//=======================================================================
 // ===================оснавная кнопка===================
-.btn {
+.btn() {
 	.button-reset;
 	background-color: inherit;
 	cursor: pointer;
@@ -114,81 +78,119 @@
 
 //======================================================
 
+// .row_link {
+// 	.col();
+// 	.size(12);
+// 	text-align: center;
+
+// 	a {
+// 		// font-family: @font-sf-bold;
+// 		color: @accent-color-2;
+// 		text-transform: uppercase;
+// 		text-decoration: underline;
+// 		font-size: 20px;
+// 		margin: 20px 0 30px 0;
+// 		display: inline-block;
+// 		transition: @transition;
+
+// 		&:hover {
+// 			color: @accent-color;
+// 		}
+// 	}
+// }
+
+// .title_custom {
+// 	font-size: 32px;
+// 	font-weight: 800;
+// 	// font-family: @font-sf-bold;
+// 	position: relative;
+// 	line-height: 45px;
+// 	display: inline-block;
+// 	.md(font-size, 46px);
+
+// 	.lg-block( {
+// 			font-size: 42px;
+// 			line-height: 60px;
+// 		}
+
+// 	);
+
+// 	&::after {
+// 		content: "";
+// 		display: inline-block;
+// 		position: absolute;
+// 		left: 0;
+// 		bottom: -10px;
+// 		width: 20%;
+// 		height: 5px;
+// 		border-radius: 15px;
+// 		background: linear-gradient(to right, #2052c9, #21a5dd);
+// 	}
+// }
+
+
+
+
 
 //=============эффект при на ведении на блок новости=============
-.pattern {
-	background-color: @darck-color;
-	position: relative;
-	display: block;
+// .pattern {
+// 	background-color: @darck-color;
+// 	position: relative;
+// 	display: block;
 
-	&::before {
-		content: '';
-		transition: opacity 0.25s ease, top 0.25s ease, left 0.25s ease, bottom 0.25s ease, right 0.25s ease;
-		z-index: 1;
-		position: absolute;
-		border: #ffffff solid 1px;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		opacity: 0;
-	}
+// 	&::before {
+// 		content: '';
+// 		transition: opacity 0.25s ease, top 0.25s ease, left 0.25s ease, bottom 0.25s ease, right 0.25s ease;
+// 		z-index: 1;
+// 		position: absolute;
+// 		border: #ffffff solid 1px;
+// 		top: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		left: 0;
+// 		opacity: 0;
+// 	}
 
-	&:hover {
-		&::before {
-			opacity: 0.4;
-			top: 10px;
-			bottom: 10px;
-			left: 10px;
-			right: 10px;
-		}
+// 	&:hover {
+// 		&::before {
+// 			opacity: 0.4;
+// 			top: 10px;
+// 			bottom: 10px;
+// 			left: 10px;
+// 			right: 10px;
+// 		}
 
-		// .overlay {
-		// 	&::before {
-		// 		opacity: 0.75;
-		// 	}
-		// }
+// 		// .overlay {
+// 		// 	&::before {
+// 		// 		opacity: 0.75;
+// 		// 	}
+// 		// }
 
-		// & .item__title__content h3 a {
-		// 	text-decoration: underline;
-		// }
-	}
+// 		// & .item__title__content h3 a {
+// 		// 	text-decoration: underline;
+// 		// }
+// 	}
 
-	// &__cat__header {
-	// 	&::before {
-	// 		display: none;
-	// 	}
-	// }
-}
+// 	// &__cat__header {
+// 	// 	&::before {
+// 	// 		display: none;
+// 	// 	}
+// 	// }
+// }
 
 //=============================================================
 
-//==========================кнопка в вверх==========================
-.pageup {
-	opacity: 0;
-	width: 43px;
-	height: 43px;
-	position: fixed;
-	bottom: 50px;
-	right: 5%;
-	z-index: 30;
-	cursor: pointer;
-	transition: 1s all;
-	fill: @accent-color;
-}
 
-//=======================================================================
+// .icon_svg {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
 
-.icon_svg {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	svg {
-		width: 30px;
-		fill: #ffffff;
-	}
-}
+// 	svg {
+// 		width: 30px;
+// 		fill: #ffffff;
+// 	}
+// }
 
 // .overlay {
 // 	background-size: cover;

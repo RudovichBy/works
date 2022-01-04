@@ -1,10 +1,10 @@
 	//**************************плавный скрол**************************	
-	function scrolling(upSelector) {
+	const  scrolling = (upSelector) =>{
 		const upElem = document.querySelector(upSelector);
 
 		window.addEventListener('scroll', () => {
 
-			if (document.documentElement.scrollTop > 800) {
+			if (document.documentElement.scrollTop > 500) {
 				upElem.classList.add('animated', 'fadeIn');
 				upElem.classList.remove('fadeOut');
 			} else {
@@ -48,4 +48,6 @@
 
 	};
 
-	scrolling('.pageup');
+
+	export default scrolling;
+	// scrolling('.pageup');

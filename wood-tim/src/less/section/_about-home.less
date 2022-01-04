@@ -1,23 +1,15 @@
 .abouthome {
-    width: 100%;
-    padding: 50px 0 50px;
+    .markup();
 }
 .abouthome_content {
-    .col();
-    .size(12);
-    h2{
-        text-align: center;
-        font-size: 22px;
-        margin-bottom: 50px;
-        .lg-block({
-            font-size: 26px;
-            margin-bottom: 50px;
-        });
-    }
+    .title_home();
     p{
         font-weight: 400;
-        color: #475359;
+        color: @text-color-l;
         font-size: 16px;
         .lg(font-size, 18px);
     }
+}
+.abouthome_btn{
+    .btn();
 }

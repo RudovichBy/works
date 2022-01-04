@@ -12,7 +12,7 @@ body {
 	font-family: @font-family;
 	font-weight: normal;
 	font-style: normal;
-	background: #fff;
+	background-color: #fff;
 	color: #000;
 	margin: 0;
 	padding: 0;
@@ -46,10 +46,12 @@ img {
 	.row-flex();
 	justify-content: center;
 }
-.col_full{
+
+.col_full {
 	.col();
 	.size(12);
 }
+
 .visually-hidden {
 	position: absolute;
 	clip: rect(0 0 0 0);
@@ -68,7 +70,33 @@ img {
 	height: auto;
 }
 
-.w-r{
-	height: 1000px;
-	background-color: lightblue;
+// =================прогрес-бар===========================
+.progress-container {
+	width: 100%;
+	height: 2px;
 }
+
+
+.progress-bar {
+	height: 2px;
+	background: linear-gradient(to right, #f7a145, #fbc388);
+	width: 0%;
+}
+
+//=========================================================
+
+//==========================кнопка в вверх=================
+.pageup {
+	opacity: 0;
+	width: 43px;
+	height: 43px;
+	position: fixed;
+	bottom: 50px;
+	right: 5%;
+	z-index: 30;
+	cursor: pointer;
+	transition: 1s all;
+	fill: @accent-color;
+}
+
+//======================================================

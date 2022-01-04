@@ -1,29 +1,12 @@
 .advantage {
-    width: 100%;
+    .markup();
     background-color: #fff;
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-    // box-shadow: 0px 5px -5px -5px rgba(34, 60, 80, 0.6) inset;
-    padding: 50px 0 50px;
 }
 
 .advantage_title {
-    .col();
-    .size(12);
-    text-align: center;
+    .title_home();
     text-transform: uppercase;
-
-    h2 {
-        margin: 0;
-        margin-bottom: 50px;
-        font-size: 24px;
-
-        .md-block( {
-                font-size: 26px;
-                margin-bottom: 100px;
-            }
-
-        );
-    }
 }
 
 .advantage_col {
@@ -94,7 +77,7 @@ div~ :last-child .advantage_wrap {
         margin: 0;
         line-height: 1.7;
         font-weight: 400;
-        color: #7d8f99;
+        color: @text-color-l;
     }
 }
 
