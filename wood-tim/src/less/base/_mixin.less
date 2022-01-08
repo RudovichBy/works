@@ -6,10 +6,43 @@
 @text-color-l: #6e7f88;
 // @text-color-l: #7d8f99;
 @bg-color: #342e2e;
+@bg-color-light: #f8f8f8;
 @darck-color: #202222;
 @darck-blue-color: #1c2026;
 @transition: all 0.5s ease;
 
+
+// ===================оснавной стиль контейнера===================
+.markup(@padding-top: 60px, @padding-bottom: 60px) {
+	width: 100%;
+	padding: @padding-top 0 @padding-bottom;
+}
+
+
+// ===================оснавной стиль заголовка===================
+.title_home(@text-transform: none, @margin-bottom: 50px, @margin-bottom-md: 70px, @font-size: 24px, @font-size-md: 26px, @color: #000) {
+	.col();
+	.size(12);
+
+	h2 {
+		text-align: center;
+		text-transform: @text-transform;
+		margin: 0;
+		margin-bottom: @margin-bottom;
+		font-size: @font-size;
+		color: @color;
+
+		.md-block( {
+				font-size: @font-size-md;
+				margin-bottom: @margin-bottom-md;
+			}
+
+		);
+	}
+}
+
+
+// ===================оснавная кнопка===================
 .button-reset() {
 	padding: 0;
 	border: none;
@@ -19,33 +52,6 @@
 	cursor: pointer;
 }
 
-.markup() {
-	width: 100%;
-	padding: 60px 0 60px;
-}
-
-.title_home() {
-	.col();
-	.size(12);
-
-	h2 {
-		text-align: center;
-		// text-transform: uppercase;
-		margin: 0;
-		margin-bottom: 50px;
-		font-size: 24px;
-
-		.md-block( {
-				font-size: 26px;
-				margin-bottom: 70px;
-			}
-
-		);
-	}
-}
-
-
-// ===================оснавная кнопка===================
 .btn() {
 	.button-reset;
 	background-color: inherit;

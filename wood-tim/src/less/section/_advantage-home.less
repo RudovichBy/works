@@ -1,12 +1,12 @@
 .advantage {
     .markup();
-    background-color: #fff;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    background-color: @bg-color-light;
+    // box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 1px 7px rgba(0, 0, 0, 0.24);
 }
 
 .advantage_title {
-    .title_home();
-    text-transform: uppercase;
+    .title_home(@text-transform: uppercase);
 }
 
 .advantage_col {
@@ -21,7 +21,7 @@
     border-bottom: 1px solid #e3e3e3;
     padding-bottom: 30px;
     margin-bottom: 30px;
-
+    transition: @transition;
     .md-block( {
             border-bottom: none;
             padding-bottom: 0;
@@ -56,10 +56,11 @@ div~ :last-child .advantage_wrap {
     // border: 1px solid @accent-color;
     border-radius: 100%;
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
-
+    transition: @transition;
     svg {
         width: 54px;
         fill: #fff;
+        transition: @transition;
     }
 }
 
@@ -71,6 +72,7 @@ div~ :last-child .advantage_wrap {
         font-weight: 700;
         font-size: 20px;
         margin-bottom: 20px;
+        transition: @transition;
     }
 
     p {
@@ -85,10 +87,10 @@ div~ :last-child .advantage_wrap {
 .advantage_wrap:hover .advantage_content h2 {
     fill: @accent-color;
     color: @accent-color;
-    transition: @transition;
+    // transition: @transition;
 }
 
 .advantage_wrap:hover .advantage_icon_box {
     background-color: #fff;
-    transition: @transition;
+    // transition: @transition;
 }

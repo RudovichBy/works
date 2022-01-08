@@ -615,6 +615,7 @@
     min-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    transition: @transition;
 }
 
 .swiper-button-prev,
@@ -624,6 +625,7 @@
 }
 .swiper-container:hover .swiper-button-prev,
 .swiper-container:hover .swiper-button-next{
+  transition: @transition;
   .lg(visibility, visible);
 }
 .swiper-button-prev::after,
