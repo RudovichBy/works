@@ -2,7 +2,7 @@
 {
     let mySwiper = new Swiper('.swiper', {
         loop: true,
-        speed: 800,
+        speed: 900,
         // autoplay: {
         // 	delay: 3000,
         // 	disableOnInteraction: false,

@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	let mySwiper = new Swiper('.swiper', {
         loop: true,
-        speed: 800,
+        speed: 900,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
