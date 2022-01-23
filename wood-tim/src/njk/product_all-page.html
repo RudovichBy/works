@@ -1,0 +1,19 @@
+{# Доп. переменные #}
+{% set title = "Древесина и Пиломатериалы" %}
+{% set description = "Древесина и Пиломатериалы" %}
+{% set keywords = "Древесина и Пиломатериалы" %}
+{% set canonical = "https://***.**/" %}
+
+{# Шаблон по умолчанию #}
+{% extends  "./layouts/default.njk" %}
+
+
+{# Блок контент #}
+{% block content %}
+{% include "./partials/header.njk" %}
+{% include "./partials/product-all-section.njk" %}
+{% include "./partials/sale-home.njk" %}
+{% include "./partials/contact-home.njk" %}
+{% include "./partials/news-home.njk" %}
+{% include "./partials/footer.njk" %}
+{% endblock %}

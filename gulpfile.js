@@ -72,14 +72,8 @@ function stylesBild() {
 	return gulp.src(path.src.less + '+(styles|basic).*')
 		.pipe(eval(preproc.less)())
 		.pipe(gcmq())
-		.pipe(autoprefixer({
-			grid: true,
-			overrideBrowserslist: ['> 0.1%'],
-			cascade: false
-		}))
-		.pipe(cleanCSS({
-			level: 2
-		}))
+		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
+		.pipe(cleanCSS({ level: 2 }))
 		.pipe(gulp.dest(path.dist.css))
 		.pipe(browserSync.stream());
 }
