@@ -12,36 +12,36 @@ module.exports = {
     mobileFirst: true,
     container: {
        // maxWidth: "1600px", // настройки внешнего контейнера
-        maxWidth: "1400px", // radiobazar
-        //maxWidth: "1170px", // настройки внешнего контейнера
+        // maxWidth: "1400px", // radiobazar
+        maxWidth: "1400px", // настройки внешнего контейнера
         //fields: "1%" //внутренние отступы контейнера Внимание! fields обязан быть >= offset / 2
         fields: "15px" //внутренние отступы контейнера Внимание! fields обязан быть >= offset / 2
     },
     breakPoints: {
-        xxl: {
-            width: "1400px",
-        },
+        // xxl: {
+        //     width: "1400px",
+        // },
         xl: {
-            width: "1200px", // radiobazar
-            // width: "1170px",
+            // width: "1200px", // radiobazar
+            width: "1200px",
         },
         lg: {
             width: "992px"
         },
         md: {
             width: "768px",
-            offset: "30px",
-            fields: "15px",
+            // offset: "30px",
+            // fields: "15px",
         },
         sm: {
             width: "576px",
-            offset: "20px",
-            fields: "10px",
+            // offset: "20px",
+            // fields: "10px",
         },
         xs: {
             width: "320px",
-            offset: "10px",
-            fields: "5px"
+            // offset: "10px",
+            // fields: "5px"
         }
     },
     // mixinNames: {

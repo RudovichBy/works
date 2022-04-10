@@ -130,6 +130,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 			// centerPadding: '60px',
 			responsive: [{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3
+					}
+				},
+				{
 					breakpoint: 992,
 					settings: {
 						slidesToShow: 2,

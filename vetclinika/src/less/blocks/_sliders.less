@@ -68,8 +68,9 @@
  		display: flex;
  		align-items: center;
  		justify-content: center;
+		 padding: 0;
  		position: absolute;
- 		bottom: -30px;
+ 		bottom: -35px;
  		z-index: 5;
 
  		& li {
@@ -103,29 +104,32 @@
  		bottom: -35px;
  		z-index: 5;
  		font-size: 0;
- 		width: 8px;
+ 		width: 11px;
  		height: 20px;
  		border: none;
  		outline: none;
  		cursor: pointer;
 
  		&.slick-prev {
+			width: 11px;
+			height: 11px;
  			background-image: url('../images/slider-left.svg');
  			background-repeat: no-repeat;
  			background-position: center;
  			background-size: contain;
  			background-color: inherit;
- 			left: calc(50% - 70px);
-
+ 			left: calc(50% - 80px);
  		}
 
  		&.slick-next {
+			width: 11px;
+			height: 11px;
  			background-image: url('../images/slider-right.svg');
  			background-repeat: no-repeat;
  			background-position: center;
  			background-size: contain;
  			background-color: inherit;
- 			right: calc(50% - 110px);
+ 			right: calc(50% - 80px);
  		}
  	}
  }
@@ -179,7 +183,7 @@
  			background-position: center;
  			background-size: contain;
  			background-color: inherit;
- 			left: 15px;
+ 			left: -15px;
 
  		}
 
